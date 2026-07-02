@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; connect-src 'self' https://earthquake.usgs.gov; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="no-referrer">
+<title>AVIDAA SEISMIC — Earthquake &amp; Tsunami Archive</title>
+<meta name="description" content="A scientific archive of earthquakes, tectonics, tsunamis, the 2026 Venezuela doublet, induced-seismicity investigations, safety protocols, and rescue-team formation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a14'/%3E%3Cpath d='M10 50 L30 50 L38 28 L50 72 L62 35 L70 50 L90 50' stroke='%23f59e0b' stroke-width='5' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8M1YZQ8WF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G8M1YZQ8WF');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+--bg:#080810;--bg2:#0f0f1c;--card:#141426;--card2:#1a1a30;
+--bd:#272746;--bd2:#33335a;
+--tx:#e8e8f4;--mut:#9494b8;--dim:#6b6b8f;
+--amber:#f59e0b;--amber2:#fbbf24;--red:#ef4444;--red2:#f87171;
+--cyan:#22d3ee;--blue:#38bdf8;--green:#2dd4a0;--purple:#a78bfa;--orange:#fb923c;
+--mono:'SFMono-Regular',ui-monospace,'Cascadia Code','Roboto Mono',Menlo,Consolas,monospace;
+--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(160deg,#080810,#0c0c18 50%,#0a0a14);color:var(--tx);font-family:var(--sans);line-height:1.65;min-height:100vh;overflow-x:hidden;font-size:15px}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(245,158,11,.07),transparent 55%),radial-gradient(ellipse at 90% 100%,rgba(239,68,68,.06),transparent 55%);pointer-events:none;z-index:0}
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:90;background:rgba(8,8,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brand{font-family:var(--mono);font-weight:700;font-size:16px;letter-spacing:1px;color:var(--amber);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.brand svg{width:22px;height:22px}
+.brand small{color:var(--dim);font-size:10px;letter-spacing:2px;font-weight:400}
+.nav-right{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nav-right button{-webkit-appearance:none;appearance:none;background:none;border:1px solid var(--bd2);color:var(--mut);font-family:var(--mono);font-size:12px;padding:6px 11px;border-radius:8px;cursor:pointer;transition:.18s}
+.nav-right button:hover{color:var(--tx);border-color:var(--amber);background:rgba(245,158,11,.08)}
+#back-home{background:linear-gradient(90deg,#f59e0b,#ef4444,#a78bfa,#22d3ee,#2dd4a0,#f59e0b);background-size:300% 100%;animation:rainbow 6s linear infinite;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;border:1px solid var(--bd2);font-weight:700;letter-spacing:1px}
+#back-home:hover{border-color:var(--amber)}
+@keyframes rainbow{to{background-position:300% 0}}
+/* NAV ROW */
+.navrow{position:sticky;top:53px;z-index:88;background:rgba(10,10,20,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);padding:8px 10px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;height:auto}
+.navrow button{-webkit-appearance:none;appearance:none;background:rgba(20,20,38,.6);border:1px solid var(--bd);color:var(--mut);font-family:var(--mono);font-size:clamp(10px,2.6vw,12px);padding:clamp(5px,1.4vw,7px) clamp(8px,2.4vw,13px);border-radius:20px;cursor:pointer;transition:.18s;flex:0 1 auto}
+.navrow button:hover{color:var(--tx);border-color:var(--bd2)}
+.navrow button.on{color:#080810;font-weight:700}
+/* SEARCH */
+.searchwrap{padding:10px 14px;background:rgba(8,8,16,.6);border-bottom:1px solid var(--bd)}
+.searchwrap input{width:100%;max-width:600px;background:var(--card);border:1px solid var(--bd2);color:var(--tx);font-family:var(--mono);font-size:13px;padding:9px 14px;border-radius:10px;outline:none}
+.searchwrap input:focus{border-color:var(--amber)}
+#search-results{max-width:600px}
+#search-results a{display:block;padding:8px 12px;margin-top:6px;background:var(--card);border:1px solid var(--bd);border-radius:8px;color:var(--tx);text-decoration:none;font-size:13px;cursor:pointer}
+#search-results a:hover{border-color:var(--amber);background:var(--card2)}
+#search-results a span{color:var(--dim);font-size:11px}
+/* PAGES */
+.wrap{max-width:1000px;margin:0 auto;padding:28px 16px 80px;position:relative;z-index:1}
+.page{display:none;animation:fade .4s}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1.ttl{font-family:var(--mono);font-size:clamp(24px,5vw,38px);font-weight:700;letter-spacing:-.5px;margin-bottom:6px;background:linear-gradient(90deg,var(--amber2),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--mut);font-size:14px;margin-bottom:22px;max-width:720px}
+h2.sec{font-family:var(--mono);font-size:19px;color:var(--amber2);margin:30px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--bd);letter-spacing:.3px}
+h3.ssec{font-size:16px;color:var(--cyan);margin:20px 0 8px;font-weight:600}
+p{margin-bottom:13px;color:#d4d4e8}
+.lead{font-size:16px;color:var(--tx)}
+b,strong{color:var(--amber2);font-weight:600}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px 20px;margin:14px 0}
+.card.amber{border-left:3px solid var(--amber)}
+.card.red{border-left:3px solid var(--red)}
+.card.cyan{border-left:3px solid var(--cyan)}
+.card.green{border-left:3px solid var(--green)}
+.card.purple{border-left:3px solid var(--purple)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;text-align:center}
+.stat .n{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--amber2)}
+.stat .n.red{color:var(--red2)}
+.stat .l{color:var(--mut);font-size:12px;margin-top:4px;letter-spacing:.5px}
+ul.clean{list-style:none;margin:10px 0 16px}
+ul.clean li{padding:8px 0 8px 26px;position:relative;border-bottom:1px solid rgba(39,39,70,.5);color:#d4d4e8}
+ul.clean li:before{content:'▸';position:absolute;left:6px;color:var(--amber);font-size:13px}
+ul.clean li:last-child{border-bottom:none}
+ol.steps{list-style:none;counter-reset:s;margin:14px 0}
+ol.steps li{counter-increment:s;padding:12px 14px 12px 50px;position:relative;background:var(--card);border:1px solid var(--bd);border-radius:10px;margin-bottom:10px}
+ol.steps li:before{content:counter(s);position:absolute;left:12px;top:12px;width:26px;height:26px;background:var(--amber);color:#080810;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:13px}
+ol.steps li b{display:block;margin-bottom:3px;color:var(--cyan)}
+.tablewrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0}
+table.dt{width:100%;border-collapse:collapse;margin:0;font-size:clamp(11px,2.6vw,13px);table-layout:auto;word-break:break-word;overflow-wrap:anywhere}
+table.dt th{background:var(--card2);color:var(--amber2);text-align:left;padding:clamp(6px,1.6vw,9px) clamp(7px,1.8vw,11px);font-family:var(--mono);font-size:clamp(10px,2.4vw,12px);border:1px solid var(--bd);word-break:break-word;overflow-wrap:anywhere}
+table.dt td{padding:clamp(6px,1.6vw,9px) clamp(7px,1.8vw,11px);border:1px solid var(--bd);color:#d4d4e8;word-break:break-word;overflow-wrap:anywhere;vertical-align:top}
+table.dt tr:nth-child(even) td{background:rgba(20,20,38,.4)}
+table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowrap}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;padding:3px 9px;border-radius:20px;background:rgba(245,158,11,.12);color:var(--amber2);border:1px solid rgba(245,158,11,.3);margin:2px 4px 2px 0}
+.tag.red{background:rgba(239,68,68,.12);color:var(--red2);border-color:rgba(239,68,68,.3)}
+.tag.cyan{background:rgba(34,211,238,.12);color:var(--cyan);border-color:rgba(34,211,238,.3)}
+.tag.green{background:rgba(45,212,160,.12);color:var(--green);border-color:rgba(45,212,160,.3)}
+.diag{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:16px 0;text-align:center}
+.diag svg{max-width:100%;height:auto}
+.diag .cap{color:var(--dim);font-size:12px;margin-top:8px;font-family:var(--mono)}
+.warn{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:14px 16px;margin:14px 0;color:var(--red2)}
+.warn b{color:var(--red2)}
+.ok{background:rgba(45,212,160,.07);border:1px solid rgba(45,212,160,.3);border-radius:12px;padding:14px 16px;margin:14px 0}
+.ok b{color:var(--green)}
+.hero{text-align:center;padding:30px 0 18px}
+.hero .big{font-family:var(--mono);font-size:clamp(30px,7vw,56px);font-weight:700;letter-spacing:-1px;line-height:1.05;background:linear-gradient(90deg,var(--amber),var(--red),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .tagline{color:var(--mut);font-size:15px;margin-top:10px;font-family:var(--mono);letter-spacing:1px}
+.tilegrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:20px 0}
+.tile{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px 16px;cursor:pointer;transition:.2s;text-align:left}
+.tile:hover{border-color:var(--amber);transform:translateY(-3px);background:var(--card2)}
+.tile .em{font-size:24px;display:block;margin-bottom:8px}
+.tile .tl{font-family:var(--mono);font-size:14px;color:var(--tx);font-weight:600}
+.tile .td{color:var(--dim);font-size:12px;margin-top:3px}
+.foot{text-align:center;padding:30px 16px;color:var(--dim);font-family:var(--mono);font-size:12px;border-top:1px solid var(--bd);margin-top:40px}
+.foot .sig{color:var(--amber);letter-spacing:2px;font-weight:700}
+.src{font-size:11px;color:var(--dim);font-style:italic;margin-top:4px}
+.live-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--green);background:rgba(45,212,160,.1);border:1px solid rgba(45,212,160,.3);padding:4px 10px;border-radius:20px}
+.live-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.feed-item{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:11px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.feed-item .mag{font-family:var(--mono);font-weight:700;font-size:17px;min-width:48px;text-align:center;padding:6px;border-radius:8px}
+.feed-item .info{flex:1;min-width:0}
+.feed-item .place{font-size:13px;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.feed-item .meta{font-size:11px;color:var(--dim);font-family:var(--mono)}
+.blog-post{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px 20px;margin-bottom:14px;cursor:pointer;transition:.2s}
+.blog-post:hover{border-color:var(--amber)}
+.blog-post .date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:1px}
+.blog-post .h{font-size:18px;color:var(--tx);margin:6px 0;font-weight:600}
+.blog-post .ex{color:var(--mut);font-size:13px}
+.backbtn{background:none;border:1px solid var(--bd2);color:var(--mut);font-family:var(--mono);font-size:12px;padding:7px 14px;border-radius:8px;cursor:pointer;margin-bottom:16px}
+.backbtn:hover{border-color:var(--amber);color:var(--tx)}
+@media(max-width:600px){.wrap{padding:20px 12px 60px}.brand small{display:none}.stat .n{font-size:24px}}
+</style>
+</head>
+<body>
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#0a0a14"/><path d="M10 50 L30 50 L38 28 L50 72 L62 35 L70 50 L90 50" stroke="#f59e0b" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    SEISMIC <small>EARTH ARCHIVE</small>
+  </div>
+  <div class="nav-right">
+    <button onclick="go('home')">Home</button>
+    <button onclick="go('venezuela')" style="color:var(--red2)">VZ 2026</button>
+    <a id="back-home" href="https://avidaa1.github.io" style="text-decoration:none;padding:6px 11px;border-radius:8px;font-family:var(--mono);font-size:12px">AVIDAA</a>
+  </div>
+</div>
+
+<!-- ===== NAV ROW ===== -->
+<div class="navrow" id="navrow"></div>
+
+<!-- ===== SEARCH ===== -->
+<div class="searchwrap">
+  <input id="search-input" oninput="doSearch(this.value)" placeholder="Search the archive — quakes, tsunami, safety, rescue, faults...">
+  <div id="search-results"></div>
+</div>
+
+<div class="wrap">
+
+<!-- ============ HOME ============ -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="big">THE MOVING EARTH</div>
+    <div class="tagline">EARTHQUAKES · TSUNAMIS · SURVIVAL · TRUTH</div>
+  </div>
+  <p class="lead">A scientific archive of how the Earth shakes &mdash; the tectonic machine beneath our feet, how quakes and tsunamis are born, the 2026 Venezuela disaster documented in full, the investigation into whether humans can cause earthquakes, and the protocols that keep people alive when the ground moves.</p>
+
+  <div class="grid" style="margin:24px 0">
+    <div class="stat"><div class="n">15+</div><div class="l">MAJOR TECTONIC PLATES</div></div>
+    <div class="stat"><div class="n">~32&times;</div><div class="l">ENERGY PER MAGNITUDE STEP</div></div>
+    <div class="stat"><div class="n red">M7.5</div><div class="l">VENEZUELA 2026 MAINSHOCK</div></div>
+    <div class="stat"><div class="n">~0%</div><div class="l">CHANCE DRILLING CAUSED IT</div></div>
+  </div>
+
+  <h2 class="sec">EXPLORE THE ARCHIVE</h2>
+  <div class="tilegrid">
+    <div class="tile" onclick="go('tectonics')"><span class="em">&#127758;</span><div class="tl">Tectonics 101</div><div class="td">Plates, faults, the chain of events</div></div>
+    <div class="tile" onclick="go('magnitude')"><span class="em">&#128202;</span><div class="tl">Magnitude &amp; Depth</div><div class="td">Scales, energy, intensity</div></div>
+    <div class="tile" onclick="go('tsunami')"><span class="em">&#127754;</span><div class="tl">Tsunami Science</div><div class="td">When waves form &mdash; and don't</div></div>
+    <div class="tile" onclick="go('venezuela')"><span class="em">&#128680;</span><div class="tl">Venezuela 2026</div><div class="td">Full case investigation</div></div>
+    <div class="tile" onclick="go('timeline')"><span class="em">&#128467;</span><div class="tl">Timeline 2026</div><div class="td">Event log, newest first</div></div>
+    <div class="tile" onclick="go('cases')"><span class="em">&#127757;</span><div class="tl">Global Cases</div><div class="td">History's great quakes</div></div>
+    <div class="tile" onclick="go('investigations')"><span class="em">&#128270;</span><div class="tl">Investigations</div><div class="td">Can humans cause quakes?</div></div>
+    <div class="tile" onclick="go('safety')"><span class="em">&#128737;</span><div class="tl">Safety Protocol</div><div class="td">Before · During · After</div></div>
+    <div class="tile" onclick="go('signs')"><span class="em">&#128064;</span><div class="tl">What to Look For</div><div class="td">Warning signs &amp; red flags</div></div>
+    <div class="tile" onclick="go('rescue')"><span class="em">&#128679;</span><div class="tl">Rescue Formation</div><div class="td">SAR teams &amp; triage</div></div>
+    <div class="tile" onclick="go('live')"><span class="em">&#128225;</span><div class="tl">Live Quakes</div><div class="td">Real-time USGS feed</div></div>
+    <div class="tile" onclick="go('blog')"><span class="em">&#9999;&#65039;</span><div class="tl">Field Notes</div><div class="td">Analysis &amp; blog</div></div>
+  </div>
+</div>
+
+<!-- ============ TECTONICS ============ -->
+<div class="page" id="page-tectonics">
+  <h1 class="ttl">Tectonics 101</h1>
+  <p class="sub">From slow-moving plates to the violent snap of a fault &mdash; the complete chain of cause and effect, step by step.</p>
+
+  <h2 class="sec">THE PLATES</h2>
+  <p>Earth's rigid outer shell &mdash; the <b>lithosphere</b> &mdash; is broken into roughly 15 large plates and dozens of smaller ones. They float on the hot, slowly flowing <b>asthenosphere</b> beneath, driven by heat from Earth's interior (mantle convection, slab pull, ridge push). They move only a few centimetres per year &mdash; about the speed your fingernails grow &mdash; but across millions of years that rearranges continents and builds mountains.</p>
+
+  <h2 class="sec">THREE KINDS OF BOUNDARY</h2>
+  <div class="grid">
+    <div class="card cyan"><h3 class="ssec" style="margin-top:0">Convergent</h3><p style="margin:0">Plates collide. One dives beneath the other (<b>subduction</b>) or they crumple into mountains. Source of the planet's <b>largest earthquakes and tsunamis</b>.</p></div>
+    <div class="card green"><h3 class="ssec" style="margin-top:0">Divergent</h3><p style="margin:0">Plates pull apart; magma rises to form new crust. Mid-ocean ridges and rift valleys. Usually smaller, shallow quakes.</p></div>
+    <div class="card amber"><h3 class="ssec" style="margin-top:0">Transform</h3><p style="margin:0">Plates grind <b>horizontally</b> past one another. The San Andreas &mdash; and Venezuela's Caribbean/South American boundary &mdash; are this type.</p></div>
+  </div>
+
+  <div class="diag">
+    <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="120" width="270" height="90" fill="#1a1a30" stroke="#33335a"/>
+      <rect x="330" y="120" width="270" height="90" fill="#141426" stroke="#33335a"/>
+      <text x="135" y="170" fill="#9494b8" font-family="monospace" font-size="13" text-anchor="middle">PLATE A</text>
+      <text x="465" y="170" fill="#9494b8" font-family="monospace" font-size="13" text-anchor="middle">PLATE B</text>
+      <line x1="300" y1="120" x2="300" y2="210" stroke="#ef4444" stroke-width="3" stroke-dasharray="6 4"/>
+      <path d="M250 60 L290 60 L290 50 L310 70 L290 90 L290 80 L250 80 Z" fill="#22d3ee"/>
+      <path d="M350 160 L310 160 L310 170 L290 150 L310 130 L310 140 L350 140 Z" fill="#f59e0b"/>
+      <text x="300" y="30" fill="#fbbf24" font-family="monospace" font-size="14" text-anchor="middle">TRANSFORM FAULT (sliding past)</text>
+    </svg>
+    <div class="cap">Transform boundary &mdash; plates slide horizontally, locking at the fault until they snap</div>
+  </div>
+
+  <h2 class="sec">THE CHAIN OF EVENTS</h2>
+  <ol class="steps">
+    <li><b>Strain builds</b>Plate edges lock together by friction. The plates keep moving, so elastic stress accumulates in the rock over decades to centuries &mdash; like slowly bending a stick.</li>
+    <li><b>The fault snaps (the earthquake)</b>When stress exceeds the rock's strength, the fault ruptures and slips suddenly. Stored elastic energy is released. The underground rupture point is the <b>focus (hypocenter)</b>; the point directly above on the surface is the <b>epicenter</b>.</li>
+    <li><b>Seismic waves radiate</b>Energy travels outward as waves: <b>P-waves</b> (fastest, push-pull, arrive first), <b>S-waves</b> (slower, side-to-side, more damaging), and <b>surface waves</b> (slowest but cause the worst shaking and building collapse).</li>
+    <li><b>The surface shakes</b>How hard depends on magnitude, depth, distance, and ground type. <b>Shallow</b> quakes on soft sediment shake hardest.</li>
+    <li><b>Tsunami &mdash; only sometimes</b>If the seafloor is thrust vertically (typically a subduction quake), the whole water column is displaced and a tsunami is born. Horizontal or on-land quakes rarely do this.</li>
+    <li><b>Aftershocks follow</b>The fault settles into its new position, producing smaller quakes for days to months &mdash; dangerous because they topple already-weakened structures.</li>
+  </ol>
+
+  <div class="card amber">
+    <b>The chain in one line:</b>
+    <p style="margin:8px 0 0">Plates move &rarr; friction locks the edges &rarr; stress builds &rarr; fault snaps (earthquake) &rarr; seismic waves shake the surface &rarr; <i>if</i> the seafloor lifts vertically &rarr; tsunami &rarr; aftershocks follow.</p>
+  </div>
+
+  <h2 class="sec">FAULT TYPES</h2>
+  <div class="tablewrap"><table class="dt">
+    <tr><th>Fault</th><th>Motion</th><th>Boundary</th><th>Tsunami risk</th></tr>
+    <tr><td>Strike-slip</td><td>Horizontal sliding</td><td>Transform</td><td>Low (little vertical lift)</td></tr>
+    <tr><td>Normal</td><td>Hanging wall drops</td><td>Divergent</td><td>Moderate if undersea</td></tr>
+    <tr><td>Reverse / Thrust</td><td>Hanging wall pushes up</td><td>Convergent</td><td>High &mdash; lifts seafloor</td></tr>
+  </table></div>
+  <p class="src">The 2026 Venezuela quakes were <b>strike-slip on a transform boundary</b> &mdash; which is exactly why the tsunami threat was minimal and quickly cancelled.</p>
+</div>
+
+<!-- ============ MAGNITUDE ============ -->
+<div class="page" id="page-magnitude">
+  <h1 class="ttl">Magnitude &amp; Depth</h1>
+  <p class="sub">How earthquake size is measured, why a single number hides enormous differences in energy, and why depth can matter as much as magnitude.</p>
+
+  <h2 class="sec">MAGNITUDE &mdash; A LOGARITHMIC SCALE</h2>
+  <p>Modern science uses <b>moment magnitude (Mw)</b>, which measures the total energy released by the rupture (it replaced the old Richter scale for large quakes). The scale is <b>logarithmic</b>: each whole step up means the ground motion is <b>10&times; larger</b> and the energy released is roughly <b>32&times; greater</b>.</p>
+
+  <div class="tablewrap"><table class="dt">
+    <tr><th>Magnitude</th><th>Effect</th><th>Energy vs M3.0</th><th>Frequency / year</th></tr>
+    <tr><td>2.0&ndash;2.9</td><td>Not felt; recorded only</td><td>&divide;32</td><td>&gt;1,000,000</td></tr>
+    <tr><td>3.0&ndash;3.9</td><td>Often felt, rarely damaging</td><td>baseline</td><td>~100,000</td></tr>
+    <tr><td>4.0&ndash;4.9</td><td>Noticeable shaking, minor damage</td><td>~32&times;</td><td>~10,000</td></tr>
+    <tr><td>5.0&ndash;5.9</td><td>Damage to weak buildings</td><td>~1,000&times;</td><td>~1,500</td></tr>
+    <tr><td>6.0&ndash;6.9</td><td>Destructive in populated areas</td><td>~32,000&times;</td><td>~130</td></tr>
+    <tr><td>7.0&ndash;7.9</td><td><b>Major &mdash; serious damage over large areas</b></td><td>~1,000,000&times;</td><td>~15</td></tr>
+    <tr><td>8.0+</td><td>Great &mdash; catastrophic, total destruction</td><td>~32,000,000&times;</td><td>~1</td></tr>
+  </table></div>
+
+  <div class="card amber">
+    <b>Why this matters for Venezuela:</b>
+    <p style="margin:8px 0 0">The M7.5 mainshock released roughly <b>350,000&times; more energy</b> than a M3.6 event &mdash; which is the largest earthquake ever credibly tied to gas extraction (Groningen). That gap is the whole reason no drilling operation can produce a quake like this.</p>
+  </div>
+
+  <h2 class="sec">DEPTH &mdash; THE HIDDEN FACTOR</h2>
+  <p>Two quakes of identical magnitude can do wildly different damage depending on <b>focal depth</b>:</p>
+  <ul class="clean">
+    <li><b>Shallow (0&ndash;70 km):</b> energy reaches the surface with little loss &mdash; most damaging. Venezuela's mainshock was ~10 km deep.</li>
+    <li><b>Intermediate (70&ndash;300 km):</b> energy spreads and weakens before reaching the surface.</li>
+    <li><b>Deep (300&ndash;700 km):</b> felt over wide areas but rarely destructive at the surface.</li>
+  </ul>
+
+  <h2 class="sec">INTENSITY &mdash; WHAT PEOPLE ACTUALLY FEEL</h2>
+  <p>Magnitude is the quake's size at the source; <b>intensity</b> (the Modified Mercalli scale, I&ndash;XII) describes shaking at a specific place. One earthquake has one magnitude but many intensities &mdash; strongest at the epicenter, fading with distance, amplified on soft soils.</p>
+  <div class="tablewrap"><table class="dt">
+    <tr><th>MMI</th><th>Shaking</th><th>Damage</th></tr>
+    <tr><td>I&ndash;III</td><td>Weak</td><td>Felt by few; like a passing truck</td></tr>
+    <tr><td>IV&ndash;V</td><td>Light&ndash;Moderate</td><td>Dishes rattle, sleepers wake</td></tr>
+    <tr><td>VI&ndash;VII</td><td>Strong</td><td>Cracked plaster, weak masonry damaged</td></tr>
+    <tr><td>VIII&ndash;IX</td><td>Severe&ndash;Violent</td><td>Buildings shift, partial collapse</td></tr>
+    <tr><td>X&ndash;XII</td><td>Extreme</td><td>Most structures destroyed, ground ruptures</td></tr>
+  </table></div>
+</div>
+
+<!-- ============ TSUNAMI ============ -->
+<div class="page" id="page-tsunami">
+  <h1 class="ttl">Tsunami Science</h1>
+  <p class="sub">A tsunami is not the same as a wind wave. It is the displacement of an entire column of water &mdash; and it only forms under specific conditions.</p>
+
+  <h2 class="sec">WHEN A TSUNAMI FORMS &mdash; AND WHEN IT DOESN'T</h2>
+  <p>A tsunami needs the <b>seafloor to move vertically</b>, shoving the whole water column up or down. The energy then spreads outward as a series of very long waves.</p>
+  <div class="grid">
+    <div class="card red"><h3 class="ssec" style="margin-top:0">&#9888;&#65039; HIGH RISK</h3><p style="margin:0"><b>Undersea thrust / subduction quakes.</b> The seafloor lifts vertically. Tōhoku 2011, Sumatra 2004, Chile 1960 &mdash; all megathrust events.</p></div>
+    <div class="card green"><h3 class="ssec" style="margin-top:0">&#10003; LOW RISK</h3><p style="margin:0"><b>Strike-slip or on-land quakes.</b> Motion is horizontal &mdash; little vertical water displacement. <b>This is why Venezuela 2026 produced no destructive tsunami.</b></p></div>
+  </div>
+
+  <h2 class="sec">ANATOMY OF A TSUNAMI</h2>
+  <ol class="steps">
+    <li><b>Generation</b>Seafloor thrusts upward, lifting the ocean above it and creating a bulge of displaced water.</li>
+    <li><b>Open-ocean travel</b>Waves race outward at up to <b>800 km/h</b> &mdash; as fast as a jet &mdash; but in deep water are only tens of centimetres tall and pass ships unnoticed.</li>
+    <li><b>Shoaling</b>Approaching shore, the wave slows as the seabed shallows. Its energy compresses, and the wave height piles up dramatically.</li>
+    <li><b>Impact</b>It strikes as a fast-rising flood or a wall of water, often in <b>multiple waves</b> minutes to an hour apart. The first is rarely the largest.</li>
+  </ol>
+
+  <div class="warn">
+    <b>&#128680; THE WARNING SIGN THAT SAVES LIVES:</b><br>
+    If the sea suddenly <b>retreats</b>, exposing the seabed and stranding fish, a tsunami may arrive within minutes. Do not go to look. <b>Move inland and to high ground immediately.</b> Strong or long ground shaking near a coast is itself a natural warning &mdash; do not wait for an official alert.
+  </div>
+
+  <h2 class="sec">WARNING SYSTEMS</h2>
+  <p>The <b>Pacific Tsunami Warning Center (PTWC)</b> and regional centres analyze quake data within minutes and issue tiered alerts: <span class="tag green">Information</span> <span class="tag cyan">Watch</span> <span class="tag">Advisory</span> <span class="tag red">Warning</span>. Coastal tide gauges and DART buoys confirm whether a wave actually formed, allowing alerts to be upgraded or &mdash; as in Venezuela 2026 &mdash; <b>cancelled</b> once data shows no destructive wave.</p>
+</div>
+<!-- ============ VENEZUELA 2026 ============ -->
+<div class="page" id="page-venezuela">
+  <h1 class="ttl">Venezuela 2026 &mdash; Case File</h1>
+  <p class="sub">A rare earthquake doublet on the Caribbean coast &mdash; the strongest to strike Venezuela in over 125 years. Full documented investigation.</p>
+
+  <div class="warn"><b>Note:</b> Figures are as of <b>Wednesday, July 1, 2026</b> and were still rising. The confirmed toll climbed from 235 (Jun 26) to ~1,430 (Jun 27) to <b>~1,943 dead</b> (Jul 1) as rescue teams reached collapsed buildings. Live authoritative sources: USGS event pages, FUNVISIS bulletins, UN/PAHO/OCHA situation reports, and major wire services.</div>
+
+  <h2 class="sec">THE EVENT</h2>
+  <p>On the evening of <b>Wednesday, June 24, 2026</b> (~6:04&ndash;6:05 p.m. local), two large, shallow strike-slip earthquakes struck north-central Venezuela just <b>39 seconds apart</b> &mdash; what the USGS called a rare "doublet."</p>
+  <div class="tablewrap"><table class="dt">
+    <tr><th>Shock</th><th>Magnitude</th><th>Depth</th><th>Epicenter</th><th>Time (UTC)</th></tr>
+    <tr><td>Foreshock</td><td>Mww 7.2</td><td>~21.9 km</td><td>ENE of San Felipe, Yaracuy</td><td>22:04</td></tr>
+    <tr><td><b>Mainshock</b></td><td><b>Mww 7.5</b></td><td>~10 km</td><td>SE of Yumare (~30 km W of Mor&oacute;n)</td><td>22:05:12</td></tr>
+  </table></div>
+  <p>Both epicenters were in <b>Veroes municipality, Yaracuy state</b>, roughly 5 km apart. The M7.5 mainshock is the <b>largest recorded earthquake to strike Venezuela since 1900</b> &mdash; the strongest in more than 125 years. USGS event id <span class="tag">us6000t7zp</span>, status reviewed.</p>
+  <p class="src">USGS and EMSC differ on some parameters (foreshock 7.2 vs 7.1; mainshock depth 10 km vs 35 km). The overlapping doublet signals make exact values harder to resolve.</p>
+
+  <h2 class="sec">THE FAULT</h2>
+  <p>The quakes ruptured the <b>Boconó&ndash;Morón&ndash;El Pilar Fault System</b> &mdash; a 1,300 km series of right-lateral strike-slip faults forming the transform plate boundary between the <b>Caribbean and South American plates</b> across northern Venezuela. The Caribbean plate grinds eastward past South America at the rate of a few cm per year. This is classic, well-understood plate-boundary tectonics.</p>
+
+  <h2 class="sec">THE TOLL (rising)</h2>
+  <div class="grid">
+    <div class="stat"><div class="n red">1,943+</div><div class="l">CONFIRMED DEAD</div></div>
+    <div class="stat"><div class="n">10,500+</div><div class="l">INJURED</div></div>
+    <div class="stat"><div class="n">43,200</div><div class="l">REPORTED MISSING</div></div>
+    <div class="stat"><div class="n">$6.7B</div><div class="l">DIRECT DAMAGE (~6% GDP)</div></div>
+  </div>
+  <p style="margin-top:14px">The toll rose steeply as crews reached collapsed buildings: ~32 (Wed night) &rarr; 235 (Fri) &rarr; 1,430 (Jun 27) &rarr; 1,719 (Jun 29) &rarr; <b>1,943 dead, 10,500+ injured</b> (Jul 1, per National Assembly President Jorge Rodríguez), with ~43,200 reported missing and 12,000&ndash;15,000 displaced. Scale of destruction: UN economists estimate <b>~$6.7 billion in direct damage (~6% of GDP)</b>; a NASA satellite analysis estimated <b>~58,870 buildings damaged or destroyed</b>; the UN says up to <b>6.8 million people</b> may need relief, including ~680,000 children. The USGS PAGER <span class="tag red">RED alert</span> modeled a toll potentially exceeding 100,000. Grimly, the UN and Venezuelan authorities agreed to procure <b>10,000 body bags</b> in anticipation of the toll rising. Foreign dead include 68+ Portuguese, 18 Spanish, 6 Argentine nationals, and 130+ Venezuelans recently deported from the US who were in La Guaira. Counts remain preliminary and official tallies have shown discrepancies.</p>
+
+  <h2 class="sec">BUILDINGS &amp; INFRASTRUCTURE</h2>
+  <ul class="clean">
+    <li><b>Hotel Eduard's</b> (Macuto, La Guaira) &mdash; beachfront hotel that collapsed completely; families and personnel of baseball teams were reportedly staying there.</li>
+    <li><b>Simón Bolívar International Airport</b> (Maiquetía) &mdash; structural damage; closed, all flights cancelled, disrupting aid arrivals.</li>
+    <li>Multiple residential buildings down across La Guaira, Caraballeda, Catia La Mar, Playa Larga, and Caracas neighborhoods (Altamira, Los Palos Grandes, San Bernardino).</li>
+    <li>A bank building collapsed in Caracas. Buildings also fell in Trujillo, Carabobo, Aragua and Miranda.</li>
+    <li>Hospitals damaged; a $200 million reconstruction fund announced for hospitals, housing and infrastructure.</li>
+  </ul>
+
+  <h2 class="sec">STATES AFFECTED</h2>
+  <p>Hardest hit: <b>La Guaira</b> (declared a disaster zone). Officials named <b>La Guaira, Miranda, Aragua, Carabobo and Falcón</b> as most affected, with the epicentral zone in Yaracuy/Carabobo. Shaking was felt across northern Venezuela and as far as <b>Bogotá and Bucaramanga, Colombia</b>, and toward Trinidad.</p>
+
+  <h3 class="ssec">Falcón state (coastal, west of Caracas)</h3>
+  <p>Governor Víctor Clark reported <b>32 people treated for injuries and 15 trapped</b> under collapsed buildings. No separate confirmed death count was broken out for Falcón &mdash; damage was real but far lighter than La Guaira, Caracas or neighboring Carabobo. Impact concentrated in the <b>east (Silva municipality, capital Tucacas)</b>, nearest the epicenter; the northwestern <b>Paraguaná peninsula</b> was largely spared.</p>
+  <p>Falcón became more of a <b>relief-staging area</b> than a heavy-damage zone: 20+ supply-collection centers were set up in Silva municipality (including the National College of Journalists HQ in Paraguaná), with the ZODI issuing safe-conduct passes for donations. Falcón is one of five states (with La Guaira, Aragua, Miranda, Carabobo) in the announced rehousing project and the red/yellow/green building-safety inspection scheme.</p>
+  <p class="src">Falcón figures are subsumed within the rising national toll (1,430&ndash;1,700+ dead, 3,240+ injured, ~46,600 reported missing).</p>
+
+  <h3 class="ssec">Neighboring states (for scale)</h3>
+  <p><b>Carabobo</b> (adjacent, harder hit): Gov. Lacava reported 9 deaths from building collapses plus indirect deaths, 40+ injured in Puerto Cabello, 25+ homes destroyed in Morón and Urama parishes. <b>Yaracuy</b> (epicenter): 13 homes heavily damaged in San Felipe, two buildings under construction collapsed in Cocorote.</p>
+
+  <h2 class="sec">AIRPORT STATUS (as of Jun 29, 2026)</h2>
+  <p>Venezuela has ~509 airports/heliports in total (most small or private), but only about <b>7 international commercial gateways</b>. Of those: <b>6 active, 1 closed</b>.</p>
+
+  <div class="warn">
+    <b>&#9992;&#65039; PARTIAL &mdash; Caracas: Simón Bolívar Intl / Maiquetía (CCS).</b> The main runway cracked and part of the terminal roof collapsed; INAC closed it by NOTAM A0266/26 (until July 2). As of Jun 27 a senior US official said <b>one runway is now operational again</b>, easing the arrival of foreign aid &mdash; French rescue teams have landed there. Commercial scheduled service remained suspended pending full assessment. This is Venezuela's primary international gateway, so most long-haul / US / European service stayed disrupted.
+  </div>
+
+  <div class="ok">
+    <b>&#10003; ACTIVE international gateways (6):</b>
+    <ul class="clean" style="margin:8px 0 0">
+      <li><b>Valencia</b> &mdash; Arturo Michelena Intl (VLN). Operating; cited destination for the Spanish aid flight.</li>
+      <li><b>Maracaibo</b> &mdash; La Chinita Intl (MAR). No reported damage.</li>
+      <li><b>Barcelona</b> &mdash; Gen. José A. Anzoátegui Intl (BLA).</li>
+      <li><b>Barquisimeto</b> &mdash; Jacinto Lara Intl (BRM). Felt shaking; operational.</li>
+      <li><b>Porlamar / Margarita</b> &mdash; Del Caribe Santiago Mariño Intl (PMV). Island hub, unaffected.</li>
+      <li><b>Punto Fijo / Las Piedras</b> &mdash; Josefa Camejo Intl (LSP). Likely open, no airport damage reported &mdash; inferred, not positively confirmed.</li>
+    </ul>
+    <p style="margin:10px 0 0">So: <b>5 confirmed active + 1 likely active</b>.</p>
+  </div>
+
+  <div class="card cyan">
+    <b>Copa Airlines &mdash; what they're actually doing:</b>
+    <p style="margin:8px 0 0">Copa has <b>suspended Caracas (CCS) until July 2</b> (matching the INAC runway NOTAM), then reassess. Meanwhile it is <b>operating service to Valencia, Maracaibo, Barcelona and Barquisimeto</b> as the workaround. The "until July 2" date applies to the Caracas suspension &mdash; the four open airports are not on that deadline. Airline plans shift daily in a disaster; confirm directly with the carrier.</p>
+  </div>
+
+  <ul class="clean">
+    <li><b>Aid hub:</b> Most incoming search-and-rescue and humanitarian flights route through <b>El Libertador Air Base, Maracay (Aragua)</b> &mdash; a military field, not a commercial gateway &mdash; because Maiquetía's runway is damaged.</li>
+    <li><b>Regional alternatives / diversions:</b> Piarco Intl (Trinidad &amp; Tobago), José María Córdova Intl (Medellín, Colombia), Curaçao and Aruba.</li>
+  </ul>
+
+  <div class="card amber">
+    <b>Airspace &mdash; corrected status:</b>
+    <p style="margin:8px 0 0">The FAA's January 2026 prohibition on Venezuelan airspace (issued after U.S. operations in the region) has since been <b>rescinded</b>. As of late June 2026 there is <b>no active FAA prohibition</b> for the Maiquetía FIR, so aid and military relief flights are operating without an airspace barrier. The real constraint now is <b>physical damage at Maiquetía</b>, not airspace politics.</p>
+  </div>
+
+  <h2 class="sec">GETTING OUT &mdash; DEPARTURE ROUTES (as of Jun 30, 2026)</h2>
+  <p><b>Can visitors leave? Yes &mdash; but not easily through Caracas.</b> Maiquetía (CCS) is still closed to commercial flights, so departures run through regional airports and overland crossings. Register with your embassy and work through your airline, not the airport.</p>
+
+  <h3 class="ssec">By air &mdash; usable international gateways</h3>
+  <div class="tablewrap"><table class="dt t2">
+    <tr><th>Airport</th><th>Status / use for departure</th></tr>
+    <tr><td>Caracas / Maiquetía (CCS)</td><td><b>CLOSED to commercial</b> &mdash; runway/terminal/tower damage, NOTAM to July 2 (may slip). Do not go to the airport; handle via airline.</td></tr>
+    <tr><td>Valencia (VLN)</td><td>OPEN &mdash; Copa operating. Nearest large alternative to Caracas.</td></tr>
+    <tr><td>Maracaibo (MAR)</td><td>OPEN &mdash; Copa operating (west).</td></tr>
+    <tr><td>Barcelona (BLA)</td><td>OPEN &mdash; Copa operating (east).</td></tr>
+    <tr><td>Barquisimeto (BRM)</td><td>OPEN &mdash; Copa operating (centre-west).</td></tr>
+    <tr><td>Porlamar / Margarita (PMV)</td><td>OPEN &mdash; island hub.</td></tr>
+    <tr><td>Punto Fijo / Las Piedras (LSP)</td><td>Likely OPEN &mdash; no damage reported (unconfirmed).</td></tr>
+  </table></div>
+  <p class="src">Caveat: none of these match Maiquetía's international connectivity, and capacity to absorb displaced Caracas passengers is limited &mdash; expect fewer seats, higher fares, and multi-leg routings.</p>
+
+  <h3 class="ssec">Carriers</h3>
+  <ul class="clean">
+    <li><b>Suspended (Caracas routes):</b> American (Miami), Avianca (Bogotá), Copa (Panama City), plus Air Europa, Iberia, Plus Ultra, Turkish, GOL, LATAM, Wingo &mdash; all offering change-fee waivers, penalty-free rebooking or refunds.</li>
+    <li><b>Still operating:</b> via the open regional airports (Copa most active) and via diversions &mdash; e.g. a Turkish Istanbul&ndash;Caracas flight diverted to Panama City. Standard pattern: fly to a hub and connect.</li>
+    <li><b>Connect through:</b> Panama City, Bogotá, Medellín, Curaçao, Aruba, Punta Cana, Madrid, Istanbul.</li>
+  </ul>
+
+  <h3 class="ssec">Overland routes (backup while air seats are scarce)</h3>
+  <ul class="clean">
+    <li><b>West &rarr; Colombia:</b> San Antonio del Táchira &rarr; Cúcuta (main land crossing), then fly from Cúcuta, Bogotá or Medellín. Táchira airport (SVZ) also operating.</li>
+    <li><b>East &rarr; Brazil:</b> Santa Elena de Uairén &rarr; Pacaraima &rarr; Boa Vista (far southeast; long haul from Caracas).</li>
+    <li><b>Sea / short-hop:</b> Caribbean ferries and charters from the coast toward Curaçao, Aruba, Bonaire and Trinidad.</li>
+  </ul>
+
+  <div class="warn">
+    <b>Constraints right now:</b> Caracas metro and rail are suspended (harder to reach a working airport); SAIME and Foreign Ministry document platforms have technical outages (delayed visas/apostilles); 430+ aftershocks continue, with a collapsed La Guaira bridge and power/internet gaps in the north.
+  </div>
+
+  <div class="card green">
+    <b>If you are trying to leave &mdash; steps:</b>
+    <ol class="steps" style="margin:8px 0 0">
+      <li><b>Register with your embassy</b>Request assistance; several governments are tracking and helping nationals.</li>
+      <li><b>Work through your airline</b>Request a free date change or refund. Do NOT manually cancel before the airline issues an official cancellation &mdash; it can void protections.</li>
+      <li><b>Reroute via an open airport</b>Valencia, Maracaibo, Barcelona, Barquisimeto or Porlamar, connecting through Panama City, Bogotá, Medellín, Curaçao or Aruba.</li>
+      <li><b>Consider overland to Colombia</b>Cúcuta via Táchira if air seats aren't available.</li>
+    </ol>
+  </div>
+
+  <h2 class="sec">TSUNAMI &mdash; THREAT CANCELLED</h2>
+  <div class="ok"><b>&#10003; No destructive tsunami.</b> The PTWC issued an alert (~5:40 p.m. local) for Venezuela's coast, Aruba, Bonaire, Curaçao, plus an advisory for Puerto Rico and the U.S. Virgin Islands. It was <b>cancelled by ~7:12 p.m.</b> the same day. Because the quakes were strike-slip and on land, there was little vertical seafloor displacement to generate a wave.</p></div>
+
+  <h2 class="sec">RESPONSE</h2>
+  <ul class="clean">
+    <li>National state of emergency declared; high-level task force created; National Risk Management System activated.</li>
+    <li>Schools cancelled nationwide for the week; metro and rail suspended for rescue ops; domestic gas supply cut to prevent leaks.</li>
+    <li>Eight public hospitals plus 12 private clinics activated for triage. PAHO later reported overwhelmed facilities, surgical backlogs, and a breakdown of forensic/morgue and casualty-registration services.</li>
+    <li><b>Connectivity &amp; power:</b> NetBlocks reported national internet "diminished despite some recovery" from power cuts and infrastructure damage; La Guaira and the northern damage belt (Caracas, parts of Miranda/Aragua/Carabobo/Falcón) lost power and cell service. By Jun 27, La Guaira electricity was ~60% restored. Gas mains in Caracas were shut off to prevent explosions; access to X was partially restored after a ~2-year block following UN pressure.</li>
+    <li>International aid pledged or sent: United States (search-and-rescue teams from Fairfax County VA and Los Angeles County; SOUTHCOM logistics), Colombia, Dominican Republic, Spain, Mexico, Qatar, Panama, Cuba, the UN, and the Vatican.</li>
+    <li>Oil infrastructure reported not immediately affected; El Palito refinery near Morón reported no damage.</li>
+  </ul>
+  <p class="src">Context: this unfolded amid Venezuela's political turmoil following the January 2026 capture of Nicolás Maduro; the country is led by interim President Delcy Rodríguez.</p>
+
+  <h2 class="sec">GOVERNMENT RESPONSE &mdash; UNDER SCRUTINY</h2>
+  <p>The interim government's handling of the rescue drew intense public anger. Reporting describes a response widely seen as <b>slow and poorly coordinated</b>, with residents in the worst-hit zones left to recover the dead themselves.</p>
+  <ul class="clean">
+    <li>In <b>Los Corales</b> (La Guaira), neighborhood volunteers pulled bodies from collapsed buildings by hand and, lacking body bags, used garbage bags and plastic sheets.</li>
+    <li>In one widely-reported scene, residents <b>blocked an excavator from leaving</b> a collapse site and pulled the operator from the cab &mdash; shortly after state workers reportedly took selfies in front of flattened buildings, then left without helping (AP).</li>
+    <li>An AP investigation was headlined <b>"Spotless uniforms, stalled cranes: inside Venezuela's faltering quake rescue effort."</b> Families cited a persistent <b>lack of heavy machinery</b> at collapse sites.</li>
+    <li><b>Access control:</b> 14,000+ military and police patrolled La Guaira, where entry was blocked and special permits required &mdash; framed as order-keeping, but criticized as limiting outside scrutiny.</li>
+    <li><b>Information concerns:</b> El Nacional reported discrepancies in official death tolls; critics allege the extent of the tragedy was downplayed. Aid groups warned the healthcare system was near its limit.</li>
+  </ul>
+  <p>What the government did do: declared a national emergency, announced a presidential building-habitability commission, restored electricity to ~75%, and accepted large-scale international help &mdash; <b>2,000+ rescue workers from 27 countries with 160+ dogs across 40+ teams</b>. The US pledged $150M; the EU &euro;5M; the UK $2M+. Rescues continued past the 72-hour window (a 60-year-old woman freed after 86 hours; a father and son after four days).</p>
+
+  <h2 class="sec">MACHADO, CURAÇAO &amp; THE US &mdash; THE POLITICAL FLASHPOINT</h2>
+  <p>Opposition leader and 2025 Nobel Peace laureate <b>María Corina Machado</b> tried to return to Venezuela to join relief efforts &mdash; and was blocked repeatedly, exposing a three-way tension between her, Caracas, and Washington.</p>
+  <ul class="clean">
+    <li><b>The Curaçao route (turned back in flight):</b> On Jun 26 she flew from Virginia toward <b>Curaçao</b> &mdash; the Dutch island ~65 km offshore she had used to escape Venezuela by sea in Dec 2025. A US&ndash;Dutch miscommunication led Dutch officials to believe the US backed her return via Curaçao; once corrected, her charter was <b>turned around mid-flight</b>.</li>
+    <li><b>US withdrew backing:</b> She aborted after the Trump administration made clear she would travel <b>at her own risk, without US support</b>. Officials called her attempts "political opportunism," alleging she sought "a photo op"; official US policy is "agnostic" on her return. The US backs interim President Rodríguez as a stabilizing figure.</li>
+    <li><b>Caracas blocked her twice:</b> A Panama City attempt to fly to Caracas was stopped when <b>Copa Airlines refused to board her</b>. Machado said the government <b>closed commercial airspace</b> to prevent her entry (later reversed) and <b>threatened those helping her</b>. She holds no valid Venezuelan passport, though officials concede that does not negate her right to return.</li>
+    <li><b>Where she is now:</b> As of late Jun&ndash;Jul 1 she was in <b>Panama City</b> &mdash; not Curaçao &mdash; stating she remains "close to Venezuela" and will "do whatever it takes" to enter.</li>
+  </ul>
+  <div class="card cyan">
+    <b>Curaçao's connection to the quake is political, not seismic.</b>
+    <p style="margin:8px 0 0">The island was not damaged (only a brief tsunami advisory, quickly cancelled). Its role in this story is as Machado's historic escape-and-return staging point &mdash; the route that the US&ndash;Dutch miscommunication scuttled. "Did Trump block her in Curaçao?" Not by direct order, but US non-support was decisive: Washington withdrew the cover she needed, and Caracas then slammed the door.</p>
+  </div>
+  <div class="card purple">
+    <b>On "exposing the truth" around this earthquake:</b>
+    <p style="margin:8px 0 0">Two things are true at once. (1) The <b>cause</b> is settled science &mdash; a natural M7.5 strike-slip rupture on the Caribbean&ndash;South American plate boundary; no human action, oil drilling, or weapon can produce a quake of this size (see <a onclick="go('investigations')" style="color:var(--cyan);cursor:pointer;text-decoration:underline">Investigations</a>). (2) The <b>human response</b> is genuinely contested and worth scrutiny: casualty opacity, slow rescue, restricted access, and the political blocking of an opposition figure during a national catastrophe. Conflating the two &mdash; treating a natural disaster as an engineered plot &mdash; obscures the real, documented failures of accountability that deserve attention.</p>
+  </div>
+
+  <div class="card purple" style="margin-top:24px">
+    <h3 class="ssec" style="margin-top:0">&#128270; Was it caused by oil drilling or human action?</h3>
+    <p style="margin:8px 0 0">No. A M7.5 plate-boundary rupture is ~1,000&times; beyond anything ever attributed to extraction, and no scientific agency linked it to oil operations. Full analysis in <a onclick="go('investigations')" style="color:var(--cyan);cursor:pointer;text-decoration:underline">Investigations</a>.</p>
+  </div>
+</div>
+
+<!-- ============ TIMELINE ============ -->
+<div class="page" id="page-timeline">
+  <h1 class="ttl">Timeline 2026</h1>
+  <p class="sub">Chronological event log of the Venezuela disaster &mdash; newest first.</p>
+
+  <div class="tablewrap"><table class="dt t2">
+    <tr><th>When (local)</th><th>Event</th></tr>
+    <tr><td>Jul 1</td><td>Toll reaches <b>~1,943 dead, 10,500+ injured, ~43,200 missing</b>; UN puts damage at <b>$6.7B (~6% GDP)</b>, NASA ~58,870 buildings hit. International SAR teams begin standing down. Machado, blocked from entering, remains in Panama City. Growing criticism of the government's "faltering" rescue (AP).</td></tr>
+    <tr><td>Jun 29</td><td>Toll 1,719 dead / ~5,000 injured (Natl. Assembly Pres. Rodríguez); electricity ~75% restored; La Guaira access sealed, permits required. <b>Machado's Curaçao attempt turned back mid-flight</b> after US withdrew support; her Panama&ndash;Caracas flight blocked by Copa. Residents pull an excavator operator from his cab amid anger over the response.</td></tr>
+    <tr><td>Jun 27</td><td>Death toll jumps to <b>at least 1,430</b>, 3,238 injured, 3,142 families homeless (Natl. Assembly Pres. Rodríguez); <b>430+ aftershocks</b> recorded. <b>One Maiquetía runway reopened</b>; French rescue teams arrive. La Guaira power ~60% restored.</td></tr>
+    <tr><td>Jun 26, midday</td><td>Confirmed toll holds at <b>~235 dead / 4,300+ injured</b>. INAC NOTAM A0266/26 keeps Maiquetía (CCS) main runway closed <b>until July 2</b>; 6 of 7 international gateways active; aid routed via El Libertador AB (Maracay). FAA airspace prohibition confirmed rescinded. A Jun 26 aftershock collapses the Caraballeda&ndash;La Guaira bridge, disrupting relief.</td></tr>
+    <tr><td>Jun 25, night</td><td>Health Minister reports toll rising to <b>~235 dead and ~4,300 injured</b>; 200+ still trapped; tens of thousands of missing-person reports filed on citizen platforms. USGS: 91% likelihood toll exceeds 1,000.</td></tr>
+    <tr><td>Jun 25, ~1:45 p.m. ET</td><td>M4.4 quake near Guatire (~16 mi from Caracas, ~135 mi from the mainshock epicenter) &mdash; unclear whether aftershock or separate event. Internet access to X partially restored after ~2 years following UN pressure.</td></tr>
+    <tr><td>Jun 25, afternoon</td><td>Official toll reaches <b>188 dead, 1,520 injured, 157 missing, 200+ trapped</b>; ~250 buildings damaged; $200M reconstruction fund announced.</td></tr>
+    <tr><td>Jun 25, midday</td><td>International SAR teams arrive/mobilize (US Fairfax &amp; LA County, Colombia, others). Aftershock sequence continues &mdash; <b>138 aftershocks</b> recorded per National Assembly president; ~40% USGS chance of a M6+ within a week.</td></tr>
+    <tr><td>Jun 25, morning</td><td>Acting President reports <b>164 dead, 971 injured</b>. Simón Bolívar Airport confirmed closed.</td></tr>
+    <tr><td>Jun 24, ~7:12 p.m.</td><td><b>Tsunami threat/advisory CANCELLED</b> after tide-gauge data shows no destructive wave.</td></tr>
+    <tr><td>Jun 24, ~6:05 p.m.</td><td><b>Mww 7.5 MAINSHOCK</b> &mdash; SE of Yumare, depth ~10 km. Buildings collapse across La Guaira and Caracas. National state of emergency declared.</td></tr>
+    <tr><td>Jun 24, ~6:04 p.m.</td><td><b>Mww 7.2 FORESHOCK</b> &mdash; ENE of San Felipe, Yaracuy. PTWC issues tsunami alert ~5:40 p.m. local.</td></tr>
+  </table></div>
+
+  <h2 class="sec">VENEZUELA SEISMIC HISTORY (context, newest first)</h2>
+  <div class="tablewrap"><table class="dt t2">
+    <tr><th>Year</th><th>Event</th></tr>
+    <tr><td>2026</td><td>M7.5 doublet, Yaracuy/Carabobo coast &mdash; strongest since 1900.</td></tr>
+    <tr><td>2018</td><td>M7.3 off Sucre (northeastern coast), deep; widely felt, limited damage.</td></tr>
+    <tr><td>1997</td><td>M6.9 Cariaco earthquake &mdash; ~80 dead, school collapses.</td></tr>
+    <tr><td>1967</td><td>M6.5&ndash;6.7 Caracas earthquake &mdash; ~280 dead, high-rise collapses.</td></tr>
+    <tr><td>1900</td><td>M7.7 &mdash; prior strongest event on record.</td></tr>
+    <tr><td>1812</td><td>Caracas earthquake &mdash; devastated the city during the independence war; thousands killed.</td></tr>
+  </table></div>
+</div>
+
+<!-- ============ GLOBAL CASES ============ -->
+<div class="page" id="page-cases">
+  <h1 class="ttl">Global Case Studies</h1>
+  <p class="sub">History's defining earthquakes &mdash; what they taught us about plates, tsunamis, and survival. Newest first.</p>
+
+  <div class="card cyan">
+    <h3 class="ssec" style="margin-top:0">2011 &mdash; Tōhoku, Japan &middot; M9.1</h3>
+    <p style="margin:0">Megathrust subduction quake off northeast Japan. Lifted the seafloor and unleashed a tsunami up to 40 m high, killing ~18,000 and triggering the Fukushima nuclear disaster. The textbook example of how subduction generates catastrophic tsunamis &mdash; the opposite of Venezuela's strike-slip event.</p>
+  </div>
+  <div class="card cyan">
+    <h3 class="ssec" style="margin-top:0">2010 &mdash; Haiti &middot; M7.0</h3>
+    <p style="margin:0">Shallow strike-slip quake on the Enriquillo fault near Port-au-Prince. Despite "only" M7.0, an estimated 100,000&ndash;300,000 died &mdash; a brutal lesson that <b>shallow depth + weak buildings + dense population</b> matters more than magnitude alone. Directly relevant to Venezuela's coastal building stock.</p>
+  </div>
+  <div class="card cyan">
+    <h3 class="ssec" style="margin-top:0">2004 &mdash; Sumatra&ndash;Andaman &middot; M9.1&ndash;9.3</h3>
+    <p style="margin:0">Indian Ocean megathrust. The tsunami killed ~230,000 across 14 countries &mdash; many with no warning system. Led directly to the creation of the Indian Ocean tsunami warning network.</p>
+  </div>
+  <div class="card cyan">
+    <h3 class="ssec" style="margin-top:0">1960 &mdash; Valdivia, Chile &middot; M9.5</h3>
+    <p style="margin:0">The <b>most powerful earthquake ever recorded</b>. Subduction of the Nazca plate beneath South America. Sent a Pacific-wide tsunami that killed people as far as Japan, 17,000 km away.</p>
+  </div>
+  <div class="card cyan">
+    <h3 class="ssec" style="margin-top:0">1906 &mdash; San Francisco, USA &middot; M7.9</h3>
+    <p style="margin:0">Strike-slip rupture of the San Andreas transform fault. Fires after the quake destroyed much of the city. Foundational to modern understanding of elastic-rebound theory &mdash; how faults store and release strain.</p>
+  </div>
+
+  <h2 class="sec">THE PATTERN</h2>
+  <p>Across every case, the lethal combination is consistent: <b>shallow depth</b>, <b>proximity to dense population</b>, <b>vulnerable buildings</b>, and for coastal megathrust events, <b>vertical seafloor displacement</b> producing a tsunami. Magnitude alone never tells the whole story &mdash; Haiti's M7.0 killed far more than many M8 events in remote or well-built regions.</p>
+</div>
+<!-- ============ INVESTIGATIONS ============ -->
+<div class="page" id="page-investigations">
+  <h1 class="ttl">Investigations</h1>
+  <p class="sub">Can humans cause earthquakes? Can oil drilling? Was Venezuela 2026 engineered? The science, the documented cases, and where the evidence actually points.</p>
+
+  <h2 class="sec">CAN HUMANS CAUSE EARTHQUAKES? &mdash; YES, BUT SMALL ONES</h2>
+  <p>Human activity <b>can</b> induce or trigger earthquakes. This is established science, documented since the 1920s. The key mechanisms tied to oil and gas:</p>
+  <ul class="clean">
+    <li><b>Wastewater injection</b> &mdash; pumping produced water into deep disposal wells raises pore pressure on faults, reducing the friction that holds them locked. This drove the U.S. mid-continent earthquake surge.</li>
+    <li><b>Hydraulic fracturing (fracking)</b> &mdash; intentionally creates micro-quakes (usually below M1) to crack rock; only occasionally produces felt events.</li>
+    <li><b>Reservoir depletion / compaction</b> &mdash; extracting fluid causes the reservoir rock to compact and the surface to subside, shifting stress on nearby faults (the Groningen and Lacq mechanism).</li>
+    <li><b>Reservoir impoundment</b> &mdash; the immense weight of water behind large dams; responsible for the largest suspected human-influenced events.</li>
+  </ul>
+
+  <h2 class="sec">DOCUMENTED REAL CASES</h2>
+  <div class="tablewrap"><table class="dt">
+    <tr><th>Case</th><th>Mechanism</th><th>Max magnitude</th></tr>
+    <tr><td>Pawnee, Oklahoma (2016)</td><td>Wastewater injection</td><td><b>M5.8</b> &mdash; largest from fluid injection on record</td></tr>
+    <tr><td>Gazli, Uzbekistan (1976&ndash;84)</td><td>Gas extraction (contested)</td><td>~M7 &mdash; but likely natural tectonic</td></tr>
+    <tr><td>Lacq, France (1969&ndash;2016)</td><td>Gas-field depletion</td><td>~M4.2</td></tr>
+    <tr><td>Groningen, Netherlands (2012)</td><td>Gas-field depletion</td><td>M3.6 (Huizinge) &mdash; 50,000+ damage claims</td></tr>
+    <tr><td>Wilmington, California (1940s&ndash;50s)</td><td>Oil-field compaction</td><td>Shallow ~M5 subsidence quakes</td></tr>
+  </table></div>
+
+  <h2 class="sec">THE CEILING &mdash; WHY DRILLING CAN'T MAKE A MEGAQUAKE</h2>
+  <p>The scientific consensus is firm: induced earthquakes are <b>shallow and small-to-moderate</b>. The largest event ever credibly attributed to fluid injection is the <b>M5.8 Pawnee</b> quake (Oklahoma, Sept 3, 2016). The McGarr (2014) model holds that maximum induced magnitude is physically limited by the total volume of fluid injected.</p>
+  <div class="card amber">
+    <b>The energy gap:</b>
+    <p style="margin:8px 0 0">Venezuela's M7.5 released roughly <b>1,000&times; more energy</b> than the largest gas-extraction quake on record. As the UC Berkeley Seismology Lab put it, drilling-site pressures are tiny compared to what the Earth itself generates &mdash; at most they nudge an <i>already critically stressed</i> fault into slipping slightly sooner. The energy still comes from nature, not the drill. There is <b>no accepted mechanism</b> by which extraction triggers a great plate-boundary rupture.</p>
+  </div>
+
+  <h2 class="sec">COULD OIL DRILLING BE LINKED TO VENEZUELA 2026?</h2>
+  <div class="grid">
+    <div class="stat"><div class="n">~0%</div><div class="l">DRILLING CAUSED THE M7.5</div></div>
+    <div class="stat"><div class="n">~0%</div><div class="l">ANY HUMAN ACTION CAUSED IT</div></div>
+  </div>
+  <ul class="clean" style="margin-top:14px">
+    <li>The epicenter sits on the Caribbean&ndash;South American transform plate boundary, <b>hundreds of km east</b> of the Maracaibo oil basin (Zulia).</li>
+    <li>The depth (~10 km) and pure strike-slip mechanism are textbook plate-boundary tectonics.</li>
+    <li>The magnitude is ~2 full units &mdash; ~1,000&times; energy &mdash; beyond anything ever attributed to oil/gas.</li>
+    <li>Venezuela sits on a historically active boundary (deadly quakes in 1812, 1900, 1967, 2018). A large quake here needs no human explanation.</li>
+    <li>No scientific institution (USGS, FUNVISIS) attributed it to human activity.</li>
+  </ul>
+  <div class="card cyan">
+    <h3 class="ssec" style="margin-top:0">The one real, separate fact</h3>
+    <p style="margin:8px 0 0">The <b>Maracaibo Basin</b> does have a century-long history of oil-extraction <b>subsidence</b> &mdash; land sinking up to ~5 m in the Bolívar Coastal Field, managed by dikes. That is a genuine, localized phenomenon worth monitoring. But subsidence and micro-seismicity in an oil field are <b>not</b> the same as a M7.5 transform-boundary rupture 300+ km away.</p>
+  </div>
+
+  <h2 class="sec">ON THE "ENGINEERED / PURGE" CLAIMS</h2>
+  <div class="card red">
+    <p style="margin:0">Claims circulating that the quake was a man-made weapon, a deliberate "purge," or otherwise engineered are <b>not supported by any seismological authority</b> and are physically impossible at this magnitude. No military or human technology can manufacture a M7.5 plate-boundary earthquake. Assigning a probability percentage to such a claim would lend false precision to something the physics rules out.</p>
+    <p style="margin:10px 0 0">What <i>is</i> worth following with ordinary skepticism is the <b>human response</b> around any disaster &mdash; how aid is allocated, who controls information, whether a crisis is used for political leverage by any party. That is normal politics, best judged across multiple independent sources, not a single narrative. The earthquake's cause is settled science; the politics of the aftermath is the contested part.</p>
+  </div>
+</div>
+
+<!-- ============ SAFETY ============ -->
+<div class="page" id="page-safety">
+  <h1 class="ttl">Safety Protocol</h1>
+  <p class="sub">What to do before, during, and after an earthquake. These steps save lives &mdash; learn them before you need them.</p>
+
+  <h2 class="sec">&#128295; BEFORE &mdash; PREPARE</h2>
+  <ul class="clean">
+    <li>Secure heavy furniture, water heaters, and shelves to walls. Move heavy objects off high shelves.</li>
+    <li>Identify safe spots in each room: under a sturdy table, against an interior wall away from windows.</li>
+    <li>Prepare a 72-hour kit: water (4 L/person/day), non-perishable food, flashlight, batteries, first-aid kit, whistle, dust mask, medications, cash, copies of documents.</li>
+    <li>Keep sturdy shoes and a flashlight by every bed &mdash; broken glass is the most common post-quake injury.</li>
+    <li>Agree a family meeting point and an out-of-area contact (local lines often jam; long-distance texts may get through).</li>
+    <li>Know how to shut off gas, water, and electricity.</li>
+  </ul>
+
+  <h2 class="sec">&#9888;&#65039; DURING &mdash; DROP, COVER, HOLD ON</h2>
+  <div class="card red">
+    <p style="margin:0 0 8px"><b>The core action wherever you are:</b></p>
+    <ol class="steps" style="margin:0">
+      <li><b>DROP</b>Get down on hands and knees before the shaking knocks you down.</li>
+      <li><b>COVER</b>Take cover under a sturdy table. If none, get against an interior wall and cover your head and neck with your arms.</li>
+      <li><b>HOLD ON</b>Hold your shelter (or your head/neck) until the shaking stops. Be ready to move with it.</li>
+    </ol>
+  </div>
+  <h3 class="ssec">By location</h3>
+  <ul class="clean">
+    <li><b>Indoors:</b> Stay inside. Do <b>not</b> run outside &mdash; most injuries happen from falling debris near exits. Stay away from windows.</li>
+    <li><b>In bed:</b> Stay there, turn face-down, cover your head and neck with a pillow.</li>
+    <li><b>Outdoors:</b> Move to an open area away from buildings, power lines, and trees. Drop down.</li>
+    <li><b>In a vehicle:</b> Pull over away from overpasses, bridges, and power lines. Stop and stay inside with seatbelt on until shaking stops.</li>
+    <li><b>Near the coast:</b> If shaking is strong or long, a tsunami may follow. The moment shaking stops, move inland and to high ground &mdash; do not wait for an alert.</li>
+    <li><b>High-rise:</b> Drop, cover, hold. Do not use elevators. Expect sprinklers and alarms.</li>
+  </ul>
+  <div class="warn"><b>Myth to discard:</b> The "triangle of life" (lying beside furniture) is <b>not</b> endorsed by emergency authorities. Drop, Cover, and Hold On is the evidence-based standard. Also: standing in a doorway is no safer in modern buildings.</div>
+
+  <h2 class="sec">&#128221; AFTER &mdash; THE FIRST HOURS</h2>
+  <ul class="clean">
+    <li>Expect <b>aftershocks</b>. Drop, cover, hold again each time.</li>
+    <li>Check yourself, then others, for injuries. Give first aid; don't move the seriously injured unless in immediate danger.</li>
+    <li>If trapped: do not light a match (gas risk). Cover your mouth, <b>tap on pipes or walls</b>, use a whistle &mdash; shout only as a last resort to avoid inhaling dust.</li>
+    <li>Check for gas leaks (smell/hiss) &mdash; if found, shut off the main, open windows, leave, and do not use switches or flames.</li>
+    <li>Stay out of damaged buildings. Wear sturdy shoes and gloves.</li>
+    <li>Use texts not calls to keep lines open. Listen to official channels.</li>
+    <li>Away from coast unless on high ground if a tsunami warning is active.</li>
+  </ul>
+</div>
+
+<!-- ============ WHAT TO LOOK FOR ============ -->
+<div class="page" id="page-signs">
+  <h1 class="ttl">What to Look For</h1>
+  <p class="sub">Earthquakes cannot be reliably predicted, but there are real warning signs, structural red flags, and aftermath hazards worth recognizing.</p>
+
+  <h2 class="sec">&#10060; THE PREDICTION MYTH</h2>
+  <p>No reliable method exists to predict the exact time, place, and size of an earthquake. "Earthquake weather," animal behavior, and clustering folklore are not validated. What scientists <b>can</b> produce are <b>probabilistic forecasts</b> (e.g. "40% chance of a M6+ aftershock this week") based on statistics, not prediction.</p>
+
+  <h2 class="sec">&#127754; IMMEDIATE TSUNAMI SIGNS (coastal)</h2>
+  <div class="warn">
+    <ul class="clean" style="margin:0">
+      <li><b>Strong or long ground shaking</b> near the coast &mdash; the quake itself is your warning.</li>
+      <li><b>The sea suddenly retreats</b>, exposing seabed and stranding fish. Leave immediately &mdash; do not go to look.</li>
+      <li>A <b>loud roar</b> from the ocean, like a train or aircraft.</li>
+      <li>Official sirens or alerts &mdash; but never wait for them if you've felt strong shaking.</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">&#127968; STRUCTURAL RED FLAGS (after a quake)</h2>
+  <p>Signs a building may be unsafe to re-enter &mdash; treat with caution and prefer professional inspection:</p>
+  <ul class="clean">
+    <li>New or widening cracks in walls, especially <b>X-shaped (shear) cracks</b> near columns and beams.</li>
+    <li>Cracks where walls meet floors or ceilings; separation between walls and the frame.</li>
+    <li>Doors and windows that no longer close (frame has racked out of square).</li>
+    <li>A building visibly leaning, sagging floors, or a "soft story" (weak open ground floor &mdash; parking, shopfronts) that has shifted.</li>
+    <li>Exposed, bent, or buckled reinforcement; crushed concrete (spalling) at column bases.</li>
+    <li>Smell of gas, sound of running water, or sparking wires &mdash; utility hazards.</li>
+  </ul>
+
+  <h2 class="sec">&#128336; AFTERSHOCK BEHAVIOR</h2>
+  <p>Aftershocks follow a predictable statistical pattern (Omori's law): most frequent immediately after the mainshock, decaying over time. They can continue for <b>days to months</b>, and a large aftershock can itself cause fresh collapses of weakened structures. The largest aftershock is typically about one magnitude unit smaller than the mainshock. Occasionally what seems an aftershock is a larger second event &mdash; as in Venezuela's doublet.</p>
+</div>
+
+<!-- ============ RESCUE ============ -->
+<div class="page" id="page-rescue">
+  <h1 class="ttl">Rescue Team Formation</h1>
+  <p class="sub">How search-and-rescue is organized after a major earthquake &mdash; from the first civilian responders to international USAR teams &mdash; and how casualties are triaged.</p>
+
+  <h2 class="sec">&#9201;&#65039; THE GOLDEN WINDOW</h2>
+  <div class="card amber">
+    <p style="margin:0">Survival rates for trapped victims are highest in the <b>first 24&ndash;48 hours</b> and drop sharply afterward, though rescues days later do happen. This is why speed of mobilization &mdash; and why the <b>first responders are almost always surviving neighbors and bystanders</b>, not professional teams &mdash; matters enormously.</p>
+  </div>
+
+  <h2 class="sec">&#129489; LAYERS OF RESPONSE</h2>
+  <ol class="steps">
+    <li><b>Immediate / civilian (0&ndash;2 hrs)</b>Surviving residents and bystanders pull people from light debris. Studies show the majority of live rescues come from this layer. Organize: account for people, do surface rescues, do not enter unstable structures.</li>
+    <li><b>Local emergency services (hrs)</b>Fire, police, ambulance. Establish incident command, secure utilities, begin structured search of priority sites (collapsed occupied buildings, hospitals, schools).</li>
+    <li><b>National / regional USAR (hours&ndash;1 day)</b>Trained Urban Search and Rescue teams with dogs, listening devices, hydraulic cutting/breaching tools, and shoring.</li>
+    <li><b>International USAR (1&ndash;3 days)</b>Teams classified by the UN INSARAG system as Light, Medium, or Heavy. Venezuela 2026 drew teams from the US (Fairfax County VA, LA County), Colombia, and others. Coordinated through a national reception center to avoid duplication.</li>
+  </ol>
+
+  <h2 class="sec">&#128104;&#8205;&#128658; USAR TEAM STRUCTURE</h2>
+  <p>A standard Urban Search and Rescue team is organized into functional components:</p>
+  <div class="tablewrap"><table class="dt t2">
+    <tr><th>Component</th><th>Role</th></tr>
+    <tr><td>Command / Management</td><td>Team leader, planning, liaison with local authorities and INSARAG coordination.</td></tr>
+    <tr><td>Search</td><td>Canine units and technical search (acoustic/seismic listening devices, search cameras on poles) to locate live victims.</td></tr>
+    <tr><td>Rescue</td><td>Breaching, breaking, lifting, shoring; extricating victims from voids and collapsed concrete.</td></tr>
+    <tr><td>Medical</td><td>On-site triage and stabilization of victims and team members; field care during long extrications.</td></tr>
+    <tr><td>Logistics / Engineering</td><td>Equipment, power, base of operations; structural engineers assess collapse stability before entry.</td></tr>
+  </table></div>
+
+  <h2 class="sec">&#127973; TRIAGE &mdash; START SYSTEM</h2>
+  <p>With many casualties and limited resources, responders sort patients by survivability and urgency. The widely used <b>START</b> (Simple Triage And Rapid Treatment) method assigns a color in under 60 seconds per patient:</p>
+  <div class="tablewrap"><table class="dt">
+    <tr><th>Tag</th><th>Meaning</th><th>Priority</th></tr>
+    <tr><td><span class="tag red">RED</span></td><td>Immediate &mdash; life-threatening but survivable with care</td><td>Treat/transport first</td></tr>
+    <tr><td><span class="tag">YELLOW</span></td><td>Delayed &mdash; serious but stable</td><td>Second</td></tr>
+    <tr><td><span class="tag green">GREEN</span></td><td>Minor &mdash; "walking wounded"</td><td>Can wait</td></tr>
+    <tr><td><span class="tag" style="background:#333;color:#aaa;border-color:#555">BLACK</span></td><td>Deceased or unsurvivable injuries</td><td>No resources until others stabilized</td></tr>
+  </table></div>
+  <p>START checks three things fast: <b>respiration</b>, <b>perfusion</b> (pulse / capillary refill), and <b>mental status</b> (can they follow commands). The goal is the greatest good for the greatest number.</p>
+
+  <h2 class="sec">&#129309; IF YOU ARE A SURVIVING BYSTANDER</h2>
+  <ul class="clean">
+    <li>Ensure your own safety first &mdash; you cannot help if you become a casualty.</li>
+    <li>Do surface and light-debris rescues; do not enter unstable structures &mdash; leave that to shored, equipped teams.</li>
+    <li>Call out and listen; mark locations where you hear or see trapped people for arriving teams.</li>
+    <li>Shut off utilities if you can do so safely; clear access routes for ambulances.</li>
+    <li>Apply basic first aid: control bleeding, keep airways clear, keep the injured warm.</li>
+    <li>Report what you know to incident command &mdash; numbers, locations, hazards.</li>
+  </ul>
+</div>
+<!-- ============ LIVE QUAKES ============ -->
+<div class="page" id="page-live">
+  <h1 class="ttl">Live Quakes</h1>
+  <p class="sub">Real-time significant earthquakes worldwide (M4.5+, past 24 hours) &mdash; direct from the USGS public feed. Newest first.</p>
+  <div style="margin-bottom:16px"><span class="live-badge"><span class="dot"></span> USGS LIVE FEED</span> <button class="backbtn" style="margin:0 0 0 8px" onclick="loadQuakes()">&#8635; Refresh</button></div>
+  <div id="quake-feed"><p style="color:var(--dim)">Loading live earthquake data&hellip;</p></div>
+  <p class="src" style="margin-top:16px">Source: earthquake.usgs.gov &mdash; USGS Earthquake Hazards Program (public, no key). Data is read-only and rendered safely. If the feed is unreachable, this section fails silently with a notice.</p>
+</div>
+
+<!-- ============ BLOG ============ -->
+<div class="page" id="page-blog">
+  <h1 class="ttl">Field Notes</h1>
+  <p class="sub">Analysis, plain-language explainers, and commentary on seismic events. Newest first.</p>
+  <div id="blog-list"></div>
+  <div id="blog-reader" style="display:none"></div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="foot">
+  <div>AVIDAA SEISMIC &mdash; Earth Archive</div>
+  <div style="margin-top:6px">Educational &amp; informational. Not a substitute for official emergency guidance. In an emergency, follow local authorities.</div>
+  <div style="margin-top:10px" class="sig">AVIDAA * IO</div>
+</div>
+
+<script>
+// ===== DATA: NAV SECTIONS (single source of truth) =====
+var SECTIONS=[
+ {id:'home',label:'Home',c:'#f59e0b'},
+ {id:'tectonics',label:'Tectonics',c:'#38bdf8'},
+ {id:'magnitude',label:'Magnitude',c:'#fbbf24'},
+ {id:'tsunami',label:'Tsunami',c:'#22d3ee'},
+ {id:'venezuela',label:'VZ 2026',c:'#f87171'},
+ {id:'timeline',label:'Timeline',c:'#fb923c'},
+ {id:'cases',label:'Cases',c:'#a78bfa'},
+ {id:'investigations',label:'Investigate',c:'#2dd4a0'},
+ {id:'safety',label:'Safety',c:'#ef4444'},
+ {id:'signs',label:'Signs',c:'#38bdf8'},
+ {id:'rescue',label:'Rescue',c:'#fbbf24'},
+ {id:'live',label:'Live',c:'#2dd4a0'},
+ {id:'blog',label:'Notes',c:'#a78bfa'}
+];
+
+// ===== SEARCH INDEX =====
+var SEARCH_IDX=[
+ {id:'tectonics',t:'Tectonics, plates, faults, strike-slip, subduction, convergent divergent transform, seismic waves P S surface, focus epicenter'},
+ {id:'magnitude',t:'Magnitude moment Mw Richter scale logarithmic energy depth intensity Mercalli MMI shallow deep'},
+ {id:'tsunami',t:'Tsunami wave seafloor displacement subduction warning PTWC retreat high ground coastal'},
+ {id:'venezuela',t:'Venezuela 2026 Caracas La Guaira doublet 7.5 7.2 Moron Yumare Yaracuy Bocono El Pilar dead missing buildings Hotel Eduards airport'},
+ {id:'timeline',t:'Timeline 2026 event log chronology dates toll history 1812 1900 1967 1997 2018'},
+ {id:'cases',t:'Global cases Tohoku Japan Haiti Sumatra Chile Valdivia San Francisco megathrust history'},
+ {id:'investigations',t:'Investigation oil drilling induced seismicity fracking wastewater injection Groningen Pawnee Lacq Maracaibo subsidence conspiracy engineered purge man made'},
+ {id:'safety',t:'Safety before during after drop cover hold on kit prepare aftershock gas leak earthquake survival'},
+ {id:'signs',t:'What to look for warning signs prediction myth structural red flags cracks soft story aftershock Omori'},
+ {id:'rescue',t:'Rescue team formation USAR search and rescue triage START golden hour 48 hours INSARAG bystander medical'},
+ {id:'live',t:'Live quakes real time USGS feed worldwide significant'},
+ {id:'blog',t:'Field notes blog analysis explainer commentary'}
+];
+
+// ===== BLOG POSTS (newest first) =====
+var POSTS=[
+ {d:'2026-06-25',h:'Why the Venezuela Quake Was Not a Tsunami Event',
+  x:'Strike-slip on land means almost no vertical seafloor lift. Here is the one-paragraph reason the alert was cancelled in under 90 minutes.',
+  b:'When the M7.5 struck near Yumare on June 24, the Pacific Tsunami Warning Center issued an alert within about 35 minutes, then cancelled it roughly 90 minutes later. The reason is mechanical, not bureaucratic. Tsunamis require the seafloor to move vertically, pushing the whole water column up. The Bocono-Moron-El Pilar fault system is a transform boundary: the Caribbean and South American plates grind horizontally past one another. Horizontal motion displaces very little water. Add that both ruptures were effectively on land rather than under open sea, and there was simply no mechanism to raise a destructive wave. Tide gauges confirmed it, and the alert was lifted. Strong shaking near any coast should still send you inland and uphill immediately, because the quake itself is the only warning you may get. But in this specific case, the wave was never going to come.'},
+ {d:'2026-06-25',h:'No, Oil Drilling Did Not Cause a Magnitude 7.5',
+  x:'Induced seismicity is real. It is also capped at roughly M5.8. The gap to M7.5 is about a thousandfold in energy.',
+  b:'Every time a large earthquake hits an oil-producing country, the same claim circulates: the drilling did it. The honest answer requires holding two facts at once. First, humans genuinely can induce earthquakes through wastewater injection, fracking, and reservoir depletion. The Oklahoma swarm and the Groningen gas field are textbook cases. Second, those induced events are small. The largest ever credibly tied to fluid injection is the M5.8 Pawnee quake of 2016. Gas-field depletion tops out lower still, around M3.6 to M4.2. A magnitude 7.5 releases on the order of a thousand times more energy than the largest extraction-linked quake on record. There is no accepted physical mechanism by which a drill can release that much stored tectonic strain. The Venezuela epicenter also sat hundreds of kilometers from the Maracaibo oil basin, at a depth and with a faulting style that are pure plate-boundary tectonics. The legitimate concern in Venezuela is Maracaibo subsidence, a slow sinking of land from decades of extraction, which is a real and separate problem. It is not a megaquake trigger.'},
+ {d:'2026-06-24',h:'What a Doublet Is, and Why It Multiplied the Damage',
+  x:'Two large shocks, 39 seconds apart. The second hit a region already cracked open by the first.',
+  b:'A doublet is two earthquakes of comparable size occurring very close together in time and space. Venezuela experienced an M7.2 followed 39 seconds later by an M7.5 just a few kilometers away. The danger of a doublet is cumulative. The foreshock weakens structures and starts collapses; the larger mainshock then strikes buildings already compromised, with occupants mid-evacuation in stairwells and doorways. It also complicates the science: overlapping seismic signals make it harder for agencies to pin exact magnitudes and depths, which is why USGS and EMSC published slightly different numbers in the first hours. For residents, the lesson is simple and brutal. After any strong shock, assume more is coming and stay in your protected position or move to genuine open ground before re-entering anything.'}
+];
+
+// ===== ROUTER =====
+function go(name){
+ var pages=document.getElementsByClassName('page');
+ for(var i=0;i<pages.length;i++){pages[i].classList.remove('active');}
+ var el=document.getElementById('page-'+name);
+ if(el){el.classList.add('active');}
+ // nav highlight
+ var btns=document.getElementById('navrow').getElementsByTagName('button');
+ for(var j=0;j<btns.length;j++){btns[j].classList.remove('on');btns[j].style.background='';btns[j].style.color='';}
+ var nb=document.getElementById('nb-'+name);
+ if(nb){var s=null;for(var k=0;k<SECTIONS.length;k++){if(SECTIONS[k].id===name)s=SECTIONS[k];}if(s){nb.classList.add('on');nb.style.background=s.c;nb.style.color='#080810';}}
+ // close blog reader when navigating
+ if(name==='blog'){blogList();}
+ // lazy-load USGS feed on first Live visit
+ if(name==='live'&&!window._liveLoaded){window._liveLoaded=true;loadQuakes();}
+ window.scrollTo({top:0,behavior:'smooth'});
+ try{gtag('event','page_view',{page_title:name});}catch(e){}
+}
+window.go=go;
+
+// ===== BUILD NAV =====
+function buildNav(){
+ var c=document.getElementById('navrow');
+ if(!c||c._built)return;c._built=true;
+ var html='';
+ for(var i=0;i<SECTIONS.length;i++){
+  var s=SECTIONS[i];
+  html+='<button id="nb-'+s.id+'" onclick="go(\x27'+s.id+'\x27)" style="border-color:'+_rgba(s.c,.35)+'">'+s.label+'</button>';
+ }
+ c.innerHTML=html;
+}
+function _rgba(hex,a){
+ var h=hex.replace('#','');
+ var r=parseInt(h.substring(0,2),16),g=parseInt(h.substring(2,4),16),b=parseInt(h.substring(4,6),16);
+ return 'rgba('+r+','+g+','+b+','+a+')';
+}
+
+// ===== ESCAPE (XSS safe) =====
+function escHtml(s){
+ if(s==null)return '';
+ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// ===== SEARCH =====
+function doSearch(q){
+ var box=document.getElementById('search-results');
+ q=(q||'').trim().toLowerCase();
+ if(q.length<2){box.innerHTML='';return;}
+ var hits=[];
+ for(var i=0;i<SEARCH_IDX.length;i++){
+  var it=SEARCH_IDX[i];
+  if(it.t.toLowerCase().indexOf(q)>=0){
+   var s=null;for(var k=0;k<SECTIONS.length;k++){if(SECTIONS[k].id===it.id)s=SECTIONS[k];}
+   hits.push({id:it.id,label:s?s.label:it.id});
+  }
+ }
+ if(!hits.length){box.innerHTML='<a style="cursor:default;color:var(--dim)">No matches</a>';return;}
+ var html='';
+ for(var j=0;j<hits.length;j++){
+  html+='<a onclick="go(\x27'+hits[j].id+'\x27);document.getElementById(\x27search-input\x27).value=\x27\x27;doSearch(\x27\x27)">'+escHtml(hits[j].label)+' <span>&rarr; open section</span></a>';
+ }
+ box.innerHTML=html;
+}
+window.doSearch=doSearch;
+
+// ===== USGS LIVE FEED =====
+function loadQuakes(){
+ var box=document.getElementById('quake-feed');
+ box.innerHTML='<p style="color:var(--dim)">Loading live earthquake data&hellip;</p>';
+ fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson')
+  .then(function(r){if(!r.ok)throw new Error('feed');return r.json();})
+  .then(function(data){
+   var f=(data&&data.features)?data.features:[];
+   if(!f.length){box.innerHTML='<p style="color:var(--dim)">No M4.5+ earthquakes recorded in the past 24 hours.</p>';return;}
+   f.sort(function(a,b){return b.properties.time-a.properties.time;}); // newest first
+   var html='';
+   for(var i=0;i<f.length;i++){
+    var p=f[i].properties;
+    var m=(p.mag!=null)?p.mag.toFixed(1):'?';
+    var col='#2dd4a0';
+    if(p.mag>=6)col='#ef4444';else if(p.mag>=5)col='#fb923c';else if(p.mag>=4.5)col='#fbbf24';
+    var when=new Date(p.time).toUTCString().replace('GMT','UTC');
+    html+='<div class="feed-item"><div class="mag" style="color:'+col+';border:1px solid '+_rgba(col,.4)+';background:'+_rgba(col,.1)+'">'+escHtml(m)+'</div>'
+      +'<div class="info"><div class="place">'+escHtml(p.place||'Unknown location')+'</div>'
+      +'<div class="meta">'+escHtml(when)+'</div></div></div>';
+   }
+   box.innerHTML=html;
+  })
+  .catch(function(){
+   box.innerHTML='<div class="warn">Live feed currently unreachable. Check your connection or view data directly at the USGS Earthquake Hazards Program site.</div>';
+  });
+}
+window.loadQuakes=loadQuakes;
+
+// ===== BLOG ENGINE =====
+function blogList(){
+ var list=document.getElementById('blog-list');
+ var reader=document.getElementById('blog-reader');
+ reader.style.display='none';list.style.display='block';
+ var sorted=POSTS.slice().sort(function(a,b){return b.d.localeCompare(a.d);}); // newest first
+ var html='';
+ for(var i=0;i<sorted.length;i++){
+  var p=sorted[i];
+  html+='<div class="blog-post" onclick="blogRead('+i+')"><div class="date">'+escHtml(p.d)+'</div>'
+    +'<div class="h">'+escHtml(p.h)+'</div><div class="ex">'+escHtml(p.x)+'</div></div>';
+ }
+ list.innerHTML=html;
+}
+function blogRead(i){
+ var sorted=POSTS.slice().sort(function(a,b){return b.d.localeCompare(a.d);});
+ var p=sorted[i];if(!p)return;
+ var list=document.getElementById('blog-list');
+ var reader=document.getElementById('blog-reader');
+ list.style.display='none';reader.style.display='block';
+ reader.innerHTML='<button class="backbtn" onclick="blogList()">&larr; All notes</button>'
+   +'<div class="date" style="font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:1px">'+escHtml(p.d)+'</div>'
+   +'<h1 class="ttl" style="font-size:26px;margin-top:6px">'+escHtml(p.h)+'</h1>'
+   +'<p class="lead">'+escHtml(p.b)+'</p>';
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+window.blogList=blogList;window.blogRead=blogRead;
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded',function(){
+ buildNav();
+ blogList();
+ go('home');
+});
+</script>
+</body>
+</html>
