@@ -233,7 +233,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <div class="stat"><div class="n">~0%</div><div class="l">CHANCE DRILLING CAUSED IT</div></div>
   </div>
 
-  <h2 class="sec">EXPLORE THE ARCHIVE</h2>
+  <h2 class="sec" id="s-explore-the-archive">EXPLORE THE ARCHIVE</h2>
   <div class="tilegrid">
     <div class="tile" onclick="go('tectonics')"><span class="em">&#127758;</span><div class="tl">Tectonics 101</div><div class="td">Plates, faults, the chain of events</div></div>
     <div class="tile" onclick="go('magnitude')"><span class="em">&#128202;</span><div class="tl">Magnitude &amp; Depth</div><div class="td">Scales, energy, intensity</div></div>
@@ -252,17 +252,17 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 
 <!-- ============ TECTONICS ============ -->
 <div class="page" id="page-tectonics">
-  <h1 class="ttl">Tectonics 101</h1>
+  <h1 class="ttl" id="s-tectonics-101">Tectonics 101</h1>
   <p class="sub">From slow-moving plates to the violent snap of a fault &mdash; the complete chain of cause and effect, step by step.</p>
 
-  <h2 class="sec">THE PLATES</h2>
+  <h2 class="sec" id="s-the-plates">THE PLATES</h2>
   <p>Earth's rigid outer shell &mdash; the <b>lithosphere</b> &mdash; is broken into roughly 15 large plates and dozens of smaller ones. They float on the hot, slowly flowing <b>asthenosphere</b> beneath, driven by heat from Earth's interior (mantle convection, slab pull, ridge push). They move only a few centimetres per year &mdash; about the speed your fingernails grow &mdash; but across millions of years that rearranges continents and builds mountains.</p>
 
-  <h2 class="sec">THREE KINDS OF BOUNDARY</h2>
+  <h2 class="sec" id="s-three-kinds-of-boundary">THREE KINDS OF BOUNDARY</h2>
   <div class="grid">
-    <div class="card cyan"><h3 class="ssec" style="margin-top:0">Convergent</h3><p style="margin:0">Plates collide. One dives beneath the other (<b>subduction</b>) or they crumple into mountains. Source of the planet's <b>largest earthquakes and tsunamis</b>.</p></div>
-    <div class="card green"><h3 class="ssec" style="margin-top:0">Divergent</h3><p style="margin:0">Plates pull apart; magma rises to form new crust. Mid-ocean ridges and rift valleys. Usually smaller, shallow quakes.</p></div>
-    <div class="card amber"><h3 class="ssec" style="margin-top:0">Transform</h3><p style="margin:0">Plates grind <b>horizontally</b> past one another. The San Andreas &mdash; and Venezuela's Caribbean/South American boundary &mdash; are this type.</p></div>
+    <div class="card cyan"><h3 class="ssec" style="margin-top:0" id="s-convergent">Convergent</h3><p style="margin:0">Plates collide. One dives beneath the other (<b>subduction</b>) or they crumple into mountains. Source of the planet's <b>largest earthquakes and tsunamis</b>.</p></div>
+    <div class="card green"><h3 class="ssec" style="margin-top:0" id="s-divergent">Divergent</h3><p style="margin:0">Plates pull apart; magma rises to form new crust. Mid-ocean ridges and rift valleys. Usually smaller, shallow quakes.</p></div>
+    <div class="card amber"><h3 class="ssec" style="margin-top:0" id="s-transform">Transform</h3><p style="margin:0">Plates grind <b>horizontally</b> past one another. The San Andreas &mdash; and Venezuela's Caribbean/South American boundary &mdash; are this type.</p></div>
   </div>
 
   <div class="diag">
@@ -279,7 +279,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <div class="cap">Transform boundary &mdash; plates slide horizontally, locking at the fault until they snap</div>
   </div>
 
-  <h2 class="sec">THE CHAIN OF EVENTS</h2>
+  <h2 class="sec" id="s-the-chain-of-events">THE CHAIN OF EVENTS</h2>
   <ol class="steps">
     <li><b>Strain builds</b>Plate edges lock together by friction. The plates keep moving, so elastic stress accumulates in the rock over decades to centuries &mdash; like slowly bending a stick.</li>
     <li><b>The fault snaps (the earthquake)</b>When stress exceeds the rock's strength, the fault ruptures and slips suddenly. Stored elastic energy is released. The underground rupture point is the <b>focus (hypocenter)</b>; the point directly above on the surface is the <b>epicenter</b>.</li>
@@ -294,7 +294,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <p style="margin:8px 0 0">Plates move &rarr; friction locks the edges &rarr; stress builds &rarr; fault snaps (earthquake) &rarr; seismic waves shake the surface &rarr; <i>if</i> the seafloor lifts vertically &rarr; tsunami &rarr; aftershocks follow.</p>
   </div>
 
-  <h2 class="sec">FAULT TYPES</h2>
+  <h2 class="sec" id="s-fault-types">FAULT TYPES</h2>
   <div class="tablewrap"><table class="dt">
     <tr><th>Fault</th><th>Motion</th><th>Boundary</th><th>Tsunami risk</th></tr>
     <tr><td>Strike-slip</td><td>Horizontal sliding</td><td>Transform</td><td>Low (little vertical lift)</td></tr>
@@ -306,10 +306,10 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 
 <!-- ============ MAGNITUDE ============ -->
 <div class="page" id="page-magnitude">
-  <h1 class="ttl">Magnitude &amp; Depth</h1>
+  <h1 class="ttl" id="s-magnitude-depth">Magnitude &amp; Depth</h1>
   <p class="sub">How earthquake size is measured, why a single number hides enormous differences in energy, and why depth can matter as much as magnitude.</p>
 
-  <h2 class="sec">MAGNITUDE &mdash; A LOGARITHMIC SCALE</h2>
+  <h2 class="sec" id="s-magnitude-a-logarithmic-scale">MAGNITUDE &mdash; A LOGARITHMIC SCALE</h2>
   <p>Modern science uses <b>moment magnitude (Mw)</b>, which measures the total energy released by the rupture (it replaced the old Richter scale for large quakes). The scale is <b>logarithmic</b>: each whole step up means the ground motion is <b>10&times; larger</b> and the energy released is roughly <b>32&times; greater</b>.</p>
 
   <div class="tablewrap"><table class="dt">
@@ -336,7 +336,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li><b>Deep (300&ndash;700 km):</b> felt over wide areas but rarely destructive at the surface.</li>
   </ul>
 
-  <h2 class="sec">INTENSITY &mdash; WHAT PEOPLE ACTUALLY FEEL</h2>
+  <h2 class="sec" id="s-intensity-what-people-actually-feel">INTENSITY &mdash; WHAT PEOPLE ACTUALLY FEEL</h2>
   <p>Magnitude is the quake's size at the source; <b>intensity</b> (the Modified Mercalli scale, I&ndash;XII) describes shaking at a specific place. One earthquake has one magnitude but many intensities &mdash; strongest at the epicenter, fading with distance, amplified on soft soils.</p>
   <div class="tablewrap"><table class="dt">
     <tr><th>MMI</th><th>Shaking</th><th>Damage</th></tr>
@@ -350,17 +350,17 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 
 <!-- ============ TSUNAMI ============ -->
 <div class="page" id="page-tsunami">
-  <h1 class="ttl">Tsunami Science</h1>
+  <h1 class="ttl" id="s-tsunami-science">Tsunami Science</h1>
   <p class="sub">A tsunami is not the same as a wind wave. It is the displacement of an entire column of water &mdash; and it only forms under specific conditions.</p>
 
-  <h2 class="sec">WHEN A TSUNAMI FORMS &mdash; AND WHEN IT DOESN'T</h2>
+  <h2 class="sec" id="s-when-a-tsunami-forms-and-when-it-doesn-t">WHEN A TSUNAMI FORMS &mdash; AND WHEN IT DOESN'T</h2>
   <p>A tsunami needs the <b>seafloor to move vertically</b>, shoving the whole water column up or down. The energy then spreads outward as a series of very long waves.</p>
   <div class="grid">
-    <div class="card red"><h3 class="ssec" style="margin-top:0">&#9888;&#65039; HIGH RISK</h3><p style="margin:0"><b>Undersea thrust / subduction quakes.</b> The seafloor lifts vertically. Tōhoku 2011, Sumatra 2004, Chile 1960 &mdash; all megathrust events.</p></div>
-    <div class="card green"><h3 class="ssec" style="margin-top:0">&#10003; LOW RISK</h3><p style="margin:0"><b>Strike-slip or on-land quakes.</b> Motion is horizontal &mdash; little vertical water displacement. <b>This is why Venezuela 2026 produced no destructive tsunami.</b></p></div>
+    <div class="card red"><h3 class="ssec" style="margin-top:0" id="s-high-risk">&#9888;&#65039; HIGH RISK</h3><p style="margin:0"><b>Undersea thrust / subduction quakes.</b> The seafloor lifts vertically. Tōhoku 2011, Sumatra 2004, Chile 1960 &mdash; all megathrust events.</p></div>
+    <div class="card green"><h3 class="ssec" style="margin-top:0" id="s-low-risk">&#10003; LOW RISK</h3><p style="margin:0"><b>Strike-slip or on-land quakes.</b> Motion is horizontal &mdash; little vertical water displacement. <b>This is why Venezuela 2026 produced no destructive tsunami.</b></p></div>
   </div>
 
-  <h2 class="sec">ANATOMY OF A TSUNAMI</h2>
+  <h2 class="sec" id="s-anatomy-of-a-tsunami">ANATOMY OF A TSUNAMI</h2>
   <ol class="steps">
     <li><b>Generation</b>Seafloor thrusts upward, lifting the ocean above it and creating a bulge of displaced water.</li>
     <li><b>Open-ocean travel</b>Waves race outward at up to <b>800 km/h</b> &mdash; as fast as a jet &mdash; but in deep water are only tens of centimetres tall and pass ships unnoticed.</li>
@@ -373,17 +373,17 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     If the sea suddenly <b>retreats</b>, exposing the seabed and stranding fish, a tsunami may arrive within minutes. Do not go to look. <b>Move inland and to high ground immediately.</b> Strong or long ground shaking near a coast is itself a natural warning &mdash; do not wait for an official alert.
   </div>
 
-  <h2 class="sec">WARNING SYSTEMS</h2>
+  <h2 class="sec" id="s-warning-systems">WARNING SYSTEMS</h2>
   <p>The <b>Pacific Tsunami Warning Center (PTWC)</b> and regional centres analyze quake data within minutes and issue tiered alerts: <span class="tag green">Information</span> <span class="tag cyan">Watch</span> <span class="tag">Advisory</span> <span class="tag red">Warning</span>. Coastal tide gauges and DART buoys confirm whether a wave actually formed, allowing alerts to be upgraded or &mdash; as in Venezuela 2026 &mdash; <b>cancelled</b> once data shows no destructive wave.</p>
 </div>
 <!-- ============ VENEZUELA 2026 ============ -->
 <div class="page" id="page-venezuela">
-  <h1 class="ttl">Venezuela 2026 &mdash; Case File</h1>
+  <h1 class="ttl" id="s-venezuela-2026-case-file">Venezuela 2026 &mdash; Case File</h1>
   <p class="sub">A rare earthquake doublet on the Caribbean coast &mdash; the strongest to strike Venezuela in over 125 years. Full documented investigation.</p>
 
   <div class="warn"><b>Note:</b> Figures are as of <b>Thursday, July 9, 2026</b> and were still rising. The confirmed toll climbed from 235 (Jun 26) to ~1,430 (Jun 27) to ~1,943 (Jul 1) to ~2,954 (Jul 4) to <b>~3,889 dead</b> (Jul 9); PAHO now warns of rising disease risk among the displaced. Live authoritative sources: USGS event pages, FUNVISIS bulletins, UN/PAHO/OCHA situation reports, and major wire services.</div>
 
-  <h2 class="sec">THE EVENT</h2>
+  <h2 class="sec" id="s-the-event">THE EVENT</h2>
   <p>On the evening of <b>Wednesday, June 24, 2026</b> (~6:04&ndash;6:05 p.m. local), two large, shallow strike-slip earthquakes struck north-central Venezuela just <b>39 seconds apart</b> &mdash; what the USGS called a rare "doublet."</p>
   <div class="tablewrap"><table class="dt">
     <tr><th>Shock</th><th>Magnitude</th><th>Depth</th><th>Epicenter</th><th>Time (UTC)</th></tr>
@@ -393,10 +393,10 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   <p>Both epicenters were in <b>Veroes municipality, Yaracuy state</b>, roughly 5 km apart. The M7.5 mainshock is the <b>largest recorded earthquake to strike Venezuela since 1900</b> &mdash; the strongest in more than 125 years. USGS event id <span class="tag">us6000t7zp</span>, status reviewed.</p>
   <p class="src">USGS and EMSC differ on some parameters (foreshock 7.2 vs 7.1; mainshock depth 10 km vs 35 km). The overlapping doublet signals make exact values harder to resolve.</p>
 
-  <h2 class="sec">THE FAULT</h2>
+  <h2 class="sec" id="s-the-fault">THE FAULT</h2>
   <p>The quakes ruptured the <b>Boconó&ndash;Morón&ndash;El Pilar Fault System</b> &mdash; a 1,300 km series of right-lateral strike-slip faults forming the transform plate boundary between the <b>Caribbean and South American plates</b> across northern Venezuela. The Caribbean plate grinds eastward past South America at the rate of a few cm per year. This is classic, well-understood plate-boundary tectonics.</p>
 
-  <h2 class="sec">THE TOLL (rising)</h2>
+  <h2 class="sec" id="s-the-toll-rising">THE TOLL (rising)</h2>
   <div class="grid">
     <div class="stat"><div class="n red">3,889+</div><div class="l">CONFIRMED DEAD</div></div>
     <div class="stat"><div class="n">16,740+</div><div class="l">INJURED</div></div>
@@ -405,7 +405,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   </div>
   <p style="margin-top:14px">The toll rose steeply as crews reached collapsed buildings: ~32 (Wed night) &rarr; 235 (Fri) &rarr; 1,430 (Jun 27) &rarr; 1,943 (Jul 1) &rarr; 2,954 (Jul 4) &rarr; 3,535 (Jul 7, mass burials began at La Esperanza Cemetery) &rarr; <b>3,889 dead by Jul 9</b>, with 16,740 injured and 17,907 displaced across ~87 shelters. Scale of destruction: UN economists estimate <b>~$6.7 billion in direct damage (~6% of GDP)</b>; a NASA satellite analysis estimated <b>~59,000 buildings damaged or destroyed</b> (versus ~850 the government has officially acknowledged); La Guaira alone saw an estimated <b>80% of buildings collapse</b>. The UN launched a <b>~$300 million appeal</b> for survivors. PAHO now warns of <b>rising disease risk</b> among displaced people from crowded shelters and degraded water/sanitation &mdash; doctors in Catia La Mar report increasing skin conditions, diarrhoea and disruption to chronic-illness care. A La Guaira forensic pathologist told CNN (anonymously, fearing retaliation) the official figure may be "not even a third" of the real total, describing a makeshift morgue processing ~400 bodies a day with no refrigerated-truck capacity left; the UN's Venezuela coordinator said "we are definitely looking at a number higher than the one already reported." Other experts (Tulane's David Smilde) counter that the government has incentives to report higher, not lower, to attract aid &mdash; both dynamics may be at play. Foreign dead include 68+ Portuguese, 18 Spanish, 8 Chinese, 9 Americans and 6 Argentine nationals, plus 130+ Venezuelans recently deported from the US who were in La Guaira. Counts remain preliminary and contested.</p>
 
-  <h2 class="sec">BUILDINGS &amp; INFRASTRUCTURE</h2>
+  <h2 class="sec" id="s-buildings-infrastructure">BUILDINGS &amp; INFRASTRUCTURE</h2>
   <ul class="clean">
     <li><b>Hotel Eduard's</b> (Macuto, La Guaira) &mdash; beachfront hotel that collapsed completely; families and personnel of baseball teams were reportedly staying there.</li>
     <li><b>Petunia Residences</b> (Los Palos Grandes, Caracas) &mdash; 14 of the tower's floors partially collapsed, leaving only 6 intact.</li>
@@ -419,18 +419,18 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li>Hospitals damaged and overwhelmed; a $200 million reconstruction fund announced for hospitals, housing and infrastructure; a new military disaster-management unit created (Jul 6) to oversee reconstruction.</li>
   </ul>
 
-  <h2 class="sec">STATES AFFECTED</h2>
+  <h2 class="sec" id="s-states-affected">STATES AFFECTED</h2>
   <p>Hardest hit: <b>La Guaira</b> (declared a disaster zone). Officials named <b>La Guaira, Miranda, Aragua, Carabobo and Falcón</b> as most affected, with the epicentral zone in Yaracuy/Carabobo. Shaking was felt across northern Venezuela and as far as <b>Bogotá and Bucaramanga, Colombia</b>, and toward Trinidad.</p>
 
-  <h3 class="ssec">Falcón state (coastal, west of Caracas)</h3>
+  <h3 class="ssec" id="s-falcon-state-coastal-west-of-caracas">Falcón state (coastal, west of Caracas)</h3>
   <p>Governor Víctor Clark reported <b>32 people treated for injuries and 15 trapped</b> under collapsed buildings. No separate confirmed death count was broken out for Falcón &mdash; damage was real but far lighter than La Guaira, Caracas or neighboring Carabobo. Impact concentrated in the <b>east (Silva municipality, capital Tucacas)</b>, nearest the epicenter; the northwestern <b>Paraguaná peninsula</b> was largely spared.</p>
   <p>Falcón became more of a <b>relief-staging area</b> than a heavy-damage zone: 20+ supply-collection centers were set up in Silva municipality (including the National College of Journalists HQ in Paraguaná), with the ZODI issuing safe-conduct passes for donations. Falcón is one of five states (with La Guaira, Aragua, Miranda, Carabobo) in the announced rehousing project and the red/yellow/green building-safety inspection scheme.</p>
   <p class="src">Falcón figures are subsumed within the rising national toll (1,430&ndash;1,700+ dead, 3,240+ injured, ~46,600 reported missing).</p>
 
-  <h3 class="ssec">Neighboring states (for scale)</h3>
+  <h3 class="ssec" id="s-neighboring-states-for-scale">Neighboring states (for scale)</h3>
   <p><b>Carabobo</b> (adjacent, harder hit): Gov. Lacava reported 9 deaths from building collapses plus indirect deaths, 40+ injured in Puerto Cabello, 25+ homes destroyed in Morón and Urama parishes. <b>Yaracuy</b> (epicenter): 13 homes heavily damaged in San Felipe, two buildings under construction collapsed in Cocorote.</p>
 
-  <h2 class="sec">AIRPORT STATUS (as of Jul 9, 2026)</h2>
+  <h2 class="sec" id="s-airport-status-as-of-jul-9-2026">AIRPORT STATUS (as of Jul 9, 2026)</h2>
   <p>Venezuela has ~509 airports/heliports in total (most small or private), but only about <b>7 international commercial gateways</b>. Of those: <b>6 active, 1 limited</b>.</p>
 
   <div class="warn">
@@ -465,10 +465,10 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <p style="margin:8px 0 0">The FAA's January 2026 prohibition on Venezuelan airspace has been <b>rescinded</b>; no active FAA prohibition exists for the Maiquetía FIR. Aid and military relief flights operate without an airspace barrier. The constraint remains <b>physical damage at Maiquetía</b>, compounded by the temporary non-scheduled-flight authorization rule.</p>
   </div>
 
-  <h2 class="sec">GETTING OUT &mdash; DEPARTURE ROUTES (as of Jul 9, 2026)</h2>
+  <h2 class="sec" id="s-getting-out-departure-routes-as-of-jul-9">GETTING OUT &mdash; DEPARTURE ROUTES (as of Jul 9, 2026)</h2>
   <p><b>Can visitors leave? Yes &mdash; but still not through Caracas.</b> Maiquetía (CCS) remains limited to military/humanitarian/diplomatic flights, so departures run through regional airports and overland crossings. Commercial carriers have <b>relocated Caracas services to Valencia (VLN)</b>, making it the main exit hub. Private/charter flights need prior authorization through at least Jul 9. Register with your embassy and work through your airline, not the airport.</p>
 
-  <h3 class="ssec">By air &mdash; usable international gateways</h3>
+  <h3 class="ssec" id="s-by-air-usable-international-gateways">By air &mdash; usable international gateways</h3>
   <div class="tablewrap"><table class="dt t2">
     <tr><th>Airport</th><th>Status / use for departure</th></tr>
     <tr><td>Caracas / Maiquetía (CCS)</td><td><b>Military / humanitarian / diplomatic only</b> &mdash; runway/terminal/tower damage; no commercial reopening date (restoration plan promised "next week," ~Jul 4). Do not go to the airport; handle via airline.</td></tr>
@@ -481,7 +481,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   </table></div>
   <p class="src">Caveat: none of these match Maiquetía's international connectivity, and capacity to absorb displaced Caracas passengers is limited &mdash; expect fewer seats, higher fares, and multi-leg routings.</p>
 
-  <h3 class="ssec">Carriers &mdash; verified status (Jul 8)</h3>
+  <h3 class="ssec" id="s-carriers-verified-status-jul-8">Carriers &mdash; verified status (Jul 8)</h3>
   <ul class="clean">
     <li><b>Domestic flights: OPERATING (observed live).</b> Venezuelan carriers (Rutaca, Avior, LASER, Conviasa, Estelar) are flying internal routes &mdash; e.g. a Rutaca MD-82 tracked live Maracaibo&rarr;east on Jul 8. Internal repositioning to the open gateways works.</li>
     <li><b>Direct Venezuela&ndash;Curaçao: SUSPENDED / NOT OBSERVED.</b> The scheduled Avior/LASER short-hops (Caracas 2x weekly; Barcelona) are not visible in live tracking &mdash; only cargo (DHL) seen at Curaçao. Booking engines still sell future-dated tickets; sold inventory is not proof of operation. Reach Curaçao via <b>Panama connection (Copa)</b> from Valencia or Maracaibo.</li>
@@ -490,7 +490,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li><b>Connect through:</b> Panama City, Bogotá, Medellín, Punta Cana, Madrid, Istanbul.</li>
   </ul>
 
-  <h3 class="ssec">Overland routes (backup while air seats are scarce)</h3>
+  <h3 class="ssec" id="s-overland-routes-backup-while-air-seats-a">Overland routes (backup while air seats are scarce)</h3>
   <ul class="clean">
     <li><b>West &rarr; Colombia:</b> San Antonio del Táchira &rarr; Cúcuta (main land crossing), then fly from Cúcuta, Bogotá or Medellín. Táchira airport (SVZ) also operating.</li>
     <li><b>East &rarr; Brazil:</b> Santa Elena de Uairén &rarr; Pacaraima &rarr; Boa Vista (far southeast; long haul from Caracas).</li>
@@ -511,10 +511,10 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     </ol>
   </div>
 
-  <h2 class="sec">TSUNAMI &mdash; THREAT CANCELLED</h2>
+  <h2 class="sec" id="s-tsunami-threat-cancelled">TSUNAMI &mdash; THREAT CANCELLED</h2>
   <div class="ok"><b>&#10003; No destructive tsunami.</b> The PTWC issued an alert (~5:40 p.m. local) for Venezuela's coast, Aruba, Bonaire, Curaçao, plus an advisory for Puerto Rico and the U.S. Virgin Islands. It was <b>cancelled by ~7:12 p.m.</b> the same day. Because the quakes were strike-slip and on land, there was little vertical seafloor displacement to generate a wave.</p></div>
 
-  <h2 class="sec">RESPONSE</h2>
+  <h2 class="sec" id="s-response">RESPONSE</h2>
   <ul class="clean">
     <li>National state of emergency declared; high-level task force created; National Risk Management System activated.</li>
     <li>Schools cancelled nationwide for the week; metro and rail suspended for rescue ops; domestic gas supply cut to prevent leaks.</li>
@@ -525,13 +525,13 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   </ul>
   <p class="src">Context: this unfolded amid Venezuela's political turmoil following the January 2026 capture of Nicolás Maduro; the country is led by interim President Delcy Rodríguez.</p>
 
-  <h2 class="sec">GOVERNMENT RESPONSE &mdash; ACCOUNTABILITY</h2>
+  <h2 class="sec" id="s-government-response-accountability">GOVERNMENT RESPONSE &mdash; ACCOUNTABILITY</h2>
   <p>The interim government &mdash; acting President Delcy Rodríguez with Diosdado Cabello as Interior Minister &mdash; drew intense criticism over a response widely described as slow, militarized and opaque. The honest picture is mixed: real, documented obstruction sits alongside genuine state incapacity, plus some serious allegations that remain unproven. The sections below keep those apart.</p>
 
-  <h3 class="ssec">Corruption track record (verified)</h3>
+  <h3 class="ssec" id="s-corruption-track-record-verified">Corruption track record (verified)</h3>
   <p>The government inherited one of the world's most corruption-ridden state structures. Transparency International's 2024 index scores Venezuela <b>10/100 &mdash; 178th of 180 countries</b>. Both leaders are US-sanctioned; Cabello was US-indicted (narco-trafficking, "Cartel de los Soles," $25M bounty). The CLAP food-box system has a long-documented history of being used as a tool of political control &mdash; directly relevant to aid-diversion concerns.</p>
 
-  <h3 class="ssec">Documented obstruction (verified, attributed)</h3>
+  <h3 class="ssec" id="s-documented-obstruction-verified-attribut">Documented obstruction (verified, attributed)</h3>
   <ul class="clean">
     <li><b>AP "Spotless uniforms, stalled cranes"</b> (Jul 1): residents dug by hand for days while uniformed troops watched and a persistent lack of heavy machinery / fuel stalled recoveries; residents pulled a government excavator operator from his cab in anger.</li>
     <li><b>Cabello on video</b> (Jun 28) physically blocking a vehicle carrying US (Fairfax County) rescuers as a rescuer said someone was "crying for help."</li>
@@ -540,16 +540,16 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li><b>Information control:</b> 200+ websites blocked; the UN Fact-Finding Mission urged authorities to restore media access, calling information "a matter of life and death."</li>
   </ul>
 
-  <h3 class="ssec">Aid diversion (mixed)</h3>
+  <h3 class="ssec" id="s-aid-diversion-mixed">Aid diversion (mixed)</h3>
   <p><b>Confirmed:</b> Venezuelan authorities detained/dismissed CICPC officers filmed removing cash from rubble (director Douglas Rico). <b>Alleged, not independently verified:</b> systematic screening of aid by political loyalty via the Carnet de la Patria / CLAP system &mdash; consistent with documented history but not corroborated by top-tier outlets for this event. <b>Uncorroborated, single-source:</b> a Miami Herald report alleging sealed La Guaira zones hide caches of gold and cash &mdash; the Herald itself said it could not verify the claims, and no other major outlet repeated them. Treat the last two as allegations, not facts.</p>
 
-  <h3 class="ssec">State incapacity &mdash; the bigger driver (expert view)</h3>
+  <h3 class="ssec" id="s-state-incapacity-the-bigger-driver-exper">State incapacity &mdash; the bigger driver (expert view)</h3>
   <p>Neutral analysts hold that most of the failure flows from a <b>collapsed state</b>, not a single plan to withhold aid. International Crisis Group's Phil Gunson called it "the worst of both worlds: an authoritarian system without any of the benefits." Tulane's David Smilde noted the military was built for regime survival, not disaster response &mdash; and cautioned against assuming deliberate death-toll suppression, since the government has incentives to report higher numbers to attract aid. The synthesis: the <b>scale</b> of death owes most to decades of institutional collapse; specific <b>deliberate acts</b> (militarized access, Cabello's obstruction, Cruz's detention, media blackout, blocking Machado) reflect prioritizing political control over lives.</p>
 
-  <h3 class="ssec">The government's defense</h3>
+  <h3 class="ssec" id="s-the-government-s-defense">The government's defense</h3>
   <p>Rodríguez angrily rejected the criticism (Jul 2): "We did not wait one day, two days or three days. We activated immediately," calling politicization "disgraceful" and its figures "rigorously verified." Cited measures: national emergency; a presidential habitability commission (green/yellow/red inspection with FUNVISIS + UCV); electricity restored to ~75%, water ~68%, roads ~90%; acceptance of ~3,681 rescuers from ~30 countries with 137 dogs; a new military disaster-management unit (Jul 6). The US <b>doubled its pledge to $300M</b> (OFAC issued relief license GL 60) and deployed the USS Fort Lauderdale plus ~2,000 troops for logistics; the EU pledged &euro;5M. Rescues continued past 72 hours (a woman freed after 86 hours; a father and son after four days; by Jul 1 more than 6,400 people had self-rescued or been rescued, including 13,400 who escaped Caraballeda/Catia La Mar unaided).</p>
 
-  <h3 class="ssec">Escalation (Jul 8&ndash;9): a second obstruction incident, and a US political rift</h3>
+  <h3 class="ssec" id="s-escalation-jul-89-a-second-obstruction-i">Escalation (Jul 8&ndash;9): a second obstruction incident, and a US political rift</h3>
   <ul class="clean">
     <li><b>Cabello caught obstructing aid again.</b> After Rodríguez publicly told Cabello to continue "working and inspecting" incoming humanitarian supplies, he was filmed the next day blocking a truck belonging to American rescue workers and interfering with their aid delivery &mdash; a second documented obstruction incident beyond the Jun 28 vehicle-blocking video.</li>
     <li><b>Republican lawmakers turned publicly on the aid pipeline.</b> Rep. María Elvira Salazar (R-FL): "Only a criminal would stand between rescue workers and people trapped beneath the rubble." Rep. Mario Díaz-Balart: "It's time for Diosdado Cabello to be extradited from Venezuela to face justice for his crimes." Sen. Rick Scott: "NOT A SINGLE CENT should go to Delcy Rodríguez, Diosdado Cabello, or any part of their brutal and corrupt regime," demanding all aid remain under direct US supervision.</li>
@@ -560,7 +560,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   </ul>
   <p class="src">These are newer, still-developing threads layered onto the corruption/obstruction findings above &mdash; treat attributions (named lawmakers, OCCRP, FDD, ICG) as sourced opinion/analysis rather than adjudicated fact, consistent with the verified/alleged/opinion framework used throughout this section.</p>
 
-  <h2 class="sec">MACHADO, CURAÇAO &amp; THE US &mdash; THE POLITICAL FLASHPOINT</h2>
+  <h2 class="sec" id="s-machado-curacao-the-us-the-political-fla">MACHADO, CURAÇAO &amp; THE US &mdash; THE POLITICAL FLASHPOINT</h2>
   <p>Opposition leader and 2025 Nobel Peace laureate <b>María Corina Machado</b> tried to return to Venezuela to join relief efforts &mdash; and was blocked repeatedly, exposing a three-way tension between her, Caracas, and Washington.</p>
   <ul class="clean">
     <li><b>The Curaçao route (turned back in flight):</b> On Jun 26 she flew from Virginia toward <b>Curaçao</b> &mdash; the Dutch island ~65 km offshore she had used to escape Venezuela by sea in Dec 2025. A US&ndash;Dutch miscommunication led Dutch officials to believe the US backed her return via Curaçao; once corrected, her charter was <b>turned around mid-flight</b>.</li>
@@ -578,14 +578,14 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   </div>
 
   <div class="card purple" style="margin-top:24px">
-    <h3 class="ssec" style="margin-top:0">&#128270; Was it caused by oil drilling or human action?</h3>
+    <h3 class="ssec" style="margin-top:0" id="s-was-it-caused-by-oil-drilling-or-human-a">&#128270; Was it caused by oil drilling or human action?</h3>
     <p style="margin:8px 0 0">No. A M7.5 plate-boundary rupture is ~1,000&times; beyond anything ever attributed to extraction, and no scientific agency linked it to oil operations. Full analysis in <a onclick="go('investigations')" style="color:var(--cyan);cursor:pointer;text-decoration:underline">Investigations</a>.</p>
   </div>
 </div>
 
 <!-- ============ TIMELINE ============ -->
 <div class="page" id="page-timeline">
-  <h1 class="ttl">Timeline 2026</h1>
+  <h1 class="ttl" id="s-timeline-2026">Timeline 2026</h1>
   <p class="sub">Chronological event log of the Venezuela disaster &mdash; newest first.</p>
 
   <div class="tablewrap"><table class="dt t2">
@@ -607,7 +607,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <tr><td>Jun 24, ~6:04 p.m.</td><td><b>Mww 7.2 FORESHOCK</b> &mdash; ENE of San Felipe, Yaracuy. PTWC issues tsunami alert ~5:40 p.m. local.</td></tr>
   </table></div>
 
-  <h2 class="sec">VENEZUELA SEISMIC HISTORY (context, newest first)</h2>
+  <h2 class="sec" id="s-venezuela-seismic-history-context-newest">VENEZUELA SEISMIC HISTORY (context, newest first)</h2>
   <div class="tablewrap"><table class="dt t2">
     <tr><th>Year</th><th>Event</th></tr>
     <tr><td>2026</td><td>M7.5 doublet, Yaracuy/Carabobo coast &mdash; strongest since 1900.</td></tr>
@@ -621,39 +621,39 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 
 <!-- ============ GLOBAL CASES ============ -->
 <div class="page" id="page-cases">
-  <h1 class="ttl">Global Case Studies</h1>
+  <h1 class="ttl" id="s-global-case-studies">Global Case Studies</h1>
   <p class="sub">History's defining earthquakes &mdash; what they taught us about plates, tsunamis, and survival. Newest first.</p>
 
   <div class="card cyan">
-    <h3 class="ssec" style="margin-top:0">2011 &mdash; Tōhoku, Japan &middot; M9.1</h3>
+    <h3 class="ssec" style="margin-top:0" id="s-2011-tohoku-japan-m9-1">2011 &mdash; Tōhoku, Japan &middot; M9.1</h3>
     <p style="margin:0">Megathrust subduction quake off northeast Japan. Lifted the seafloor and unleashed a tsunami up to 40 m high, killing ~18,000 and triggering the Fukushima nuclear disaster. The textbook example of how subduction generates catastrophic tsunamis &mdash; the opposite of Venezuela's strike-slip event.</p>
   </div>
   <div class="card cyan">
-    <h3 class="ssec" style="margin-top:0">2010 &mdash; Haiti &middot; M7.0</h3>
+    <h3 class="ssec" style="margin-top:0" id="s-2010-haiti-m7-0">2010 &mdash; Haiti &middot; M7.0</h3>
     <p style="margin:0">Shallow strike-slip quake on the Enriquillo fault near Port-au-Prince. Despite "only" M7.0, an estimated 100,000&ndash;300,000 died &mdash; a brutal lesson that <b>shallow depth + weak buildings + dense population</b> matters more than magnitude alone. Directly relevant to Venezuela's coastal building stock.</p>
   </div>
   <div class="card cyan">
-    <h3 class="ssec" style="margin-top:0">2004 &mdash; Sumatra&ndash;Andaman &middot; M9.1&ndash;9.3</h3>
+    <h3 class="ssec" style="margin-top:0" id="s-2004-sumatraandaman-m9-19-3">2004 &mdash; Sumatra&ndash;Andaman &middot; M9.1&ndash;9.3</h3>
     <p style="margin:0">Indian Ocean megathrust. The tsunami killed ~230,000 across 14 countries &mdash; many with no warning system. Led directly to the creation of the Indian Ocean tsunami warning network.</p>
   </div>
   <div class="card cyan">
-    <h3 class="ssec" style="margin-top:0">1960 &mdash; Valdivia, Chile &middot; M9.5</h3>
+    <h3 class="ssec" style="margin-top:0" id="s-1960-valdivia-chile-m9-5">1960 &mdash; Valdivia, Chile &middot; M9.5</h3>
     <p style="margin:0">The <b>most powerful earthquake ever recorded</b>. Subduction of the Nazca plate beneath South America. Sent a Pacific-wide tsunami that killed people as far as Japan, 17,000 km away.</p>
   </div>
   <div class="card cyan">
-    <h3 class="ssec" style="margin-top:0">1906 &mdash; San Francisco, USA &middot; M7.9</h3>
+    <h3 class="ssec" style="margin-top:0" id="s-1906-san-francisco-usa-m7-9">1906 &mdash; San Francisco, USA &middot; M7.9</h3>
     <p style="margin:0">Strike-slip rupture of the San Andreas transform fault. Fires after the quake destroyed much of the city. Foundational to modern understanding of elastic-rebound theory &mdash; how faults store and release strain.</p>
   </div>
 
-  <h2 class="sec">THE PATTERN</h2>
+  <h2 class="sec" id="s-the-pattern">THE PATTERN</h2>
   <p>Across every case, the lethal combination is consistent: <b>shallow depth</b>, <b>proximity to dense population</b>, <b>vulnerable buildings</b>, and for coastal megathrust events, <b>vertical seafloor displacement</b> producing a tsunami. Magnitude alone never tells the whole story &mdash; Haiti's M7.0 killed far more than many M8 events in remote or well-built regions.</p>
 </div>
 <!-- ============ INVESTIGATIONS ============ -->
 <div class="page" id="page-investigations">
-  <h1 class="ttl">Investigations</h1>
+  <h1 class="ttl" id="s-investigations">Investigations</h1>
   <p class="sub">Can humans cause earthquakes? Can oil drilling? Was Venezuela 2026 engineered? The science, the documented cases, and where the evidence actually points.</p>
 
-  <h2 class="sec">CAN HUMANS CAUSE EARTHQUAKES? &mdash; YES, BUT SMALL ONES</h2>
+  <h2 class="sec" id="s-can-humans-cause-earthquakes-yes-but-sma">CAN HUMANS CAUSE EARTHQUAKES? &mdash; YES, BUT SMALL ONES</h2>
   <p>Human activity <b>can</b> induce or trigger earthquakes. This is established science, documented since the 1920s. The key mechanisms tied to oil and gas:</p>
   <ul class="clean">
     <li><b>Wastewater injection</b> &mdash; pumping produced water into deep disposal wells raises pore pressure on faults, reducing the friction that holds them locked. This drove the U.S. mid-continent earthquake surge.</li>
@@ -662,7 +662,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li><b>Reservoir impoundment</b> &mdash; the immense weight of water behind large dams; responsible for the largest suspected human-influenced events.</li>
   </ul>
 
-  <h2 class="sec">DOCUMENTED REAL CASES</h2>
+  <h2 class="sec" id="s-documented-real-cases">DOCUMENTED REAL CASES</h2>
   <div class="tablewrap"><table class="dt">
     <tr><th>Case</th><th>Mechanism</th><th>Max magnitude</th></tr>
     <tr><td>Pawnee, Oklahoma (2016)</td><td>Wastewater injection</td><td><b>M5.8</b> &mdash; largest from fluid injection on record</td></tr>
@@ -672,14 +672,14 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <tr><td>Wilmington, California (1940s&ndash;50s)</td><td>Oil-field compaction</td><td>Shallow ~M5 subsidence quakes</td></tr>
   </table></div>
 
-  <h2 class="sec">THE CEILING &mdash; WHY DRILLING CAN'T MAKE A MEGAQUAKE</h2>
+  <h2 class="sec" id="s-the-ceiling-why-drilling-can-t-make-a-me">THE CEILING &mdash; WHY DRILLING CAN'T MAKE A MEGAQUAKE</h2>
   <p>The scientific consensus is firm: induced earthquakes are <b>shallow and small-to-moderate</b>. The largest event ever credibly attributed to fluid injection is the <b>M5.8 Pawnee</b> quake (Oklahoma, Sept 3, 2016). The McGarr (2014) model holds that maximum induced magnitude is physically limited by the total volume of fluid injected.</p>
   <div class="card amber">
     <b>The energy gap:</b>
     <p style="margin:8px 0 0">Venezuela's M7.5 released roughly <b>1,000&times; more energy</b> than the largest gas-extraction quake on record. As the UC Berkeley Seismology Lab put it, drilling-site pressures are tiny compared to what the Earth itself generates &mdash; at most they nudge an <i>already critically stressed</i> fault into slipping slightly sooner. The energy still comes from nature, not the drill. There is <b>no accepted mechanism</b> by which extraction triggers a great plate-boundary rupture.</p>
   </div>
 
-  <h2 class="sec">COULD OIL DRILLING BE LINKED TO VENEZUELA 2026?</h2>
+  <h2 class="sec" id="s-could-oil-drilling-be-linked-to-venezuel">COULD OIL DRILLING BE LINKED TO VENEZUELA 2026?</h2>
   <div class="grid">
     <div class="stat"><div class="n">~0%</div><div class="l">DRILLING CAUSED THE M7.5</div></div>
     <div class="stat"><div class="n">~0%</div><div class="l">ANY HUMAN ACTION CAUSED IT</div></div>
@@ -692,11 +692,11 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li>No scientific institution (USGS, FUNVISIS) attributed it to human activity.</li>
   </ul>
   <div class="card cyan">
-    <h3 class="ssec" style="margin-top:0">The one real, separate fact</h3>
+    <h3 class="ssec" style="margin-top:0" id="s-the-one-real-separate-fact">The one real, separate fact</h3>
     <p style="margin:8px 0 0">The <b>Maracaibo Basin</b> does have a century-long history of oil-extraction <b>subsidence</b> &mdash; land sinking up to ~5 m in the Bolívar Coastal Field, managed by dikes. That is a genuine, localized phenomenon worth monitoring. But subsidence and micro-seismicity in an oil field are <b>not</b> the same as a M7.5 transform-boundary rupture 300+ km away.</p>
   </div>
 
-  <h2 class="sec">ON THE "ENGINEERED / PURGE" CLAIMS</h2>
+  <h2 class="sec" id="s-on-the-engineered-purge-claims">ON THE "ENGINEERED / PURGE" CLAIMS</h2>
   <div class="card red">
     <p style="margin:0">Claims circulating that the quake was a man-made weapon, a deliberate "purge," or otherwise engineered are <b>not supported by any seismological authority</b> and are physically impossible at this magnitude. No military or human technology can manufacture a M7.5 plate-boundary earthquake. Assigning a probability percentage to such a claim would lend false precision to something the physics rules out.</p>
     <p style="margin:10px 0 0">What <i>is</i> worth following with ordinary skepticism is the <b>human response</b> around any disaster &mdash; how aid is allocated, who controls information, whether a crisis is used for political leverage by any party. That is normal politics, best judged across multiple independent sources, not a single narrative. The earthquake's cause is settled science; the politics of the aftermath is the contested part.</p>
@@ -705,10 +705,10 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 
 <!-- ============ SAFETY ============ -->
 <div class="page" id="page-safety">
-  <h1 class="ttl">Safety Protocol</h1>
+  <h1 class="ttl" id="s-safety-protocol">Safety Protocol</h1>
   <p class="sub">What to do before, during, and after an earthquake. These steps save lives &mdash; learn them before you need them.</p>
 
-  <h2 class="sec">&#128295; BEFORE &mdash; PREPARE</h2>
+  <h2 class="sec" id="s-before-prepare">&#128295; BEFORE &mdash; PREPARE</h2>
   <ul class="clean">
     <li>Secure heavy furniture, water heaters, and shelves to walls. Move heavy objects off high shelves.</li>
     <li>Identify safe spots in each room: under a sturdy table, against an interior wall away from windows.</li>
@@ -718,7 +718,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li>Know how to shut off gas, water, and electricity.</li>
   </ul>
 
-  <h2 class="sec">&#9888;&#65039; DURING &mdash; DROP, COVER, HOLD ON</h2>
+  <h2 class="sec" id="s-during-drop-cover-hold-on">&#9888;&#65039; DURING &mdash; DROP, COVER, HOLD ON</h2>
   <div class="card red">
     <p style="margin:0 0 8px"><b>The core action wherever you are:</b></p>
     <ol class="steps" style="margin:0">
@@ -727,7 +727,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
       <li><b>HOLD ON</b>Hold your shelter (or your head/neck) until the shaking stops. Be ready to move with it.</li>
     </ol>
   </div>
-  <h3 class="ssec">By location</h3>
+  <h3 class="ssec" id="s-by-location">By location</h3>
   <ul class="clean">
     <li><b>Indoors:</b> Stay inside. Do <b>not</b> run outside &mdash; most injuries happen from falling debris near exits. Stay away from windows.</li>
     <li><b>In bed:</b> Stay there, turn face-down, cover your head and neck with a pillow.</li>
@@ -738,7 +738,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   </ul>
   <div class="warn"><b>Myth to discard:</b> The "triangle of life" (lying beside furniture) is <b>not</b> endorsed by emergency authorities. Drop, Cover, and Hold On is the evidence-based standard. Also: standing in a doorway is no safer in modern buildings.</div>
 
-  <h2 class="sec">&#128221; AFTER &mdash; THE FIRST HOURS</h2>
+  <h2 class="sec" id="s-after-the-first-hours">&#128221; AFTER &mdash; THE FIRST HOURS</h2>
   <ul class="clean">
     <li>Expect <b>aftershocks</b>. Drop, cover, hold again each time.</li>
     <li>Check yourself, then others, for injuries. Give first aid; don't move the seriously injured unless in immediate danger.</li>
@@ -752,13 +752,13 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 
 <!-- ============ WHAT TO LOOK FOR ============ -->
 <div class="page" id="page-signs">
-  <h1 class="ttl">What to Look For</h1>
+  <h1 class="ttl" id="s-what-to-look-for">What to Look For</h1>
   <p class="sub">Earthquakes cannot be reliably predicted, but there are real warning signs, structural red flags, and aftermath hazards worth recognizing.</p>
 
-  <h2 class="sec">&#10060; THE PREDICTION MYTH</h2>
+  <h2 class="sec" id="s-the-prediction-myth">&#10060; THE PREDICTION MYTH</h2>
   <p>No reliable method exists to predict the exact time, place, and size of an earthquake. "Earthquake weather," animal behavior, and clustering folklore are not validated. What scientists <b>can</b> produce are <b>probabilistic forecasts</b> (e.g. "40% chance of a M6+ aftershock this week") based on statistics, not prediction.</p>
 
-  <h2 class="sec">&#127754; IMMEDIATE TSUNAMI SIGNS (coastal)</h2>
+  <h2 class="sec" id="s-immediate-tsunami-signs-coastal">&#127754; IMMEDIATE TSUNAMI SIGNS (coastal)</h2>
   <div class="warn">
     <ul class="clean" style="margin:0">
       <li><b>Strong or long ground shaking</b> near the coast &mdash; the quake itself is your warning.</li>
@@ -768,7 +768,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     </ul>
   </div>
 
-  <h2 class="sec">&#127968; STRUCTURAL RED FLAGS (after a quake)</h2>
+  <h2 class="sec" id="s-structural-red-flags-after-a-quake">&#127968; STRUCTURAL RED FLAGS (after a quake)</h2>
   <p>Signs a building may be unsafe to re-enter &mdash; treat with caution and prefer professional inspection:</p>
   <ul class="clean">
     <li>New or widening cracks in walls, especially <b>X-shaped (shear) cracks</b> near columns and beams.</li>
@@ -779,21 +779,21 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li>Smell of gas, sound of running water, or sparking wires &mdash; utility hazards.</li>
   </ul>
 
-  <h2 class="sec">&#128336; AFTERSHOCK BEHAVIOR</h2>
+  <h2 class="sec" id="s-aftershock-behavior">&#128336; AFTERSHOCK BEHAVIOR</h2>
   <p>Aftershocks follow a predictable statistical pattern (Omori's law): most frequent immediately after the mainshock, decaying over time. They can continue for <b>days to months</b>, and a large aftershock can itself cause fresh collapses of weakened structures. The largest aftershock is typically about one magnitude unit smaller than the mainshock. Occasionally what seems an aftershock is a larger second event &mdash; as in Venezuela's doublet.</p>
 </div>
 
 <!-- ============ RESCUE ============ -->
 <div class="page" id="page-rescue">
-  <h1 class="ttl">Rescue Team Formation</h1>
+  <h1 class="ttl" id="s-rescue-team-formation">Rescue Team Formation</h1>
   <p class="sub">How search-and-rescue is organized after a major earthquake &mdash; from the first civilian responders to international USAR teams &mdash; and how casualties are triaged.</p>
 
-  <h2 class="sec">&#9201;&#65039; THE GOLDEN WINDOW</h2>
+  <h2 class="sec" id="s-the-golden-window">&#9201;&#65039; THE GOLDEN WINDOW</h2>
   <div class="card amber">
     <p style="margin:0">Survival rates for trapped victims are highest in the <b>first 24&ndash;48 hours</b> and drop sharply afterward, though rescues days later do happen. This is why speed of mobilization &mdash; and why the <b>first responders are almost always surviving neighbors and bystanders</b>, not professional teams &mdash; matters enormously.</p>
   </div>
 
-  <h2 class="sec">&#129489; LAYERS OF RESPONSE</h2>
+  <h2 class="sec" id="s-layers-of-response">&#129489; LAYERS OF RESPONSE</h2>
   <ol class="steps">
     <li><b>Immediate / civilian (0&ndash;2 hrs)</b>Surviving residents and bystanders pull people from light debris. Studies show the majority of live rescues come from this layer. Organize: account for people, do surface rescues, do not enter unstable structures.</li>
     <li><b>Local emergency services (hrs)</b>Fire, police, ambulance. Establish incident command, secure utilities, begin structured search of priority sites (collapsed occupied buildings, hospitals, schools).</li>
@@ -801,7 +801,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <li><b>International USAR (1&ndash;3 days)</b>Teams classified by the UN INSARAG system as Light, Medium, or Heavy. Venezuela 2026 drew teams from the US (Fairfax County VA, LA County), Colombia, and others. Coordinated through a national reception center to avoid duplication.</li>
   </ol>
 
-  <h2 class="sec">&#128104;&#8205;&#128658; USAR TEAM STRUCTURE</h2>
+  <h2 class="sec" id="s-usar-team-structure">&#128104;&#8205;&#128658; USAR TEAM STRUCTURE</h2>
   <p>A standard Urban Search and Rescue team is organized into functional components:</p>
   <div class="tablewrap"><table class="dt t2">
     <tr><th>Component</th><th>Role</th></tr>
@@ -812,7 +812,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
     <tr><td>Logistics / Engineering</td><td>Equipment, power, base of operations; structural engineers assess collapse stability before entry.</td></tr>
   </table></div>
 
-  <h2 class="sec">&#127973; TRIAGE &mdash; START SYSTEM</h2>
+  <h2 class="sec" id="s-triage-start-system">&#127973; TRIAGE &mdash; START SYSTEM</h2>
   <p>With many casualties and limited resources, responders sort patients by survivability and urgency. The widely used <b>START</b> (Simple Triage And Rapid Treatment) method assigns a color in under 60 seconds per patient:</p>
   <div class="tablewrap"><table class="dt">
     <tr><th>Tag</th><th>Meaning</th><th>Priority</th></tr>
@@ -823,7 +823,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
   </table></div>
   <p>START checks three things fast: <b>respiration</b>, <b>perfusion</b> (pulse / capillary refill), and <b>mental status</b> (can they follow commands). The goal is the greatest good for the greatest number.</p>
 
-  <h2 class="sec">&#129309; IF YOU ARE A SURVIVING BYSTANDER</h2>
+  <h2 class="sec" id="s-if-you-are-a-surviving-bystander">&#129309; IF YOU ARE A SURVIVING BYSTANDER</h2>
   <ul class="clean">
     <li>Ensure your own safety first &mdash; you cannot help if you become a casualty.</li>
     <li>Do surface and light-debris rescues; do not enter unstable structures &mdash; leave that to shored, equipped teams.</li>
@@ -835,7 +835,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 </div>
 <!-- ============ LIVE QUAKES ============ -->
 <div class="page" id="page-live">
-  <h1 class="ttl">Live Quakes</h1>
+  <h1 class="ttl" id="s-live-quakes">Live Quakes</h1>
   <p class="sub">Real-time significant earthquakes worldwide (M4.5+, past 24 hours) &mdash; direct from the USGS public feed. Newest first.</p>
   <div style="margin-bottom:16px"><span class="live-badge"><span class="dot"></span> USGS LIVE FEED</span> <button class="backbtn" style="margin:0 0 0 8px" onclick="loadQuakes()">&#8635; Refresh</button></div>
   <div id="quake-feed"><p style="color:var(--dim)">Loading live earthquake data&hellip;</p></div>
@@ -844,7 +844,7 @@ table.dt.t2 td:first-child,table.dt.t2 th:first-child{width:22%;white-space:nowr
 
 <!-- ============ BLOG ============ -->
 <div class="page" id="page-blog">
-  <h1 class="ttl">Field Notes</h1>
+  <h1 class="ttl" id="s-field-notes">Field Notes</h1>
   <p class="sub">Analysis, plain-language explainers, and commentary on seismic events. Newest first.</p>
   <div id="blog-list"></div>
   <div id="blog-reader" style="display:none"></div>
@@ -1054,7 +1054,7 @@ if(document.readyState==='complete')start();else addEventListener('load',start);
 addEventListener('resize',sched);})();</script><script id="av-shell-20261124">/* AVIDAA shell: shared header (or floating pill) + footer with the "Last updated" stamp. No outside calls, no tracking.
    Template tokens are replaced when a page is built: Seismic --av-knowledge Knowledge 2026-11-24 06:37 */
 (function(){
-  var NAME='Seismic',SECTOR='--av-knowledge',STAMP='2026-11-25 14:28',HOME='https://avidaa1.github.io/';
+  var NAME='Seismic',SECTOR='--av-knowledge',STAMP='2026-11-25 14:45',HOME='https://avidaa1.github.io/';
   var ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   function build(){
     if(!document.body||document.querySelector('.av-footer'))return;
@@ -1383,6 +1383,112 @@ addEventListener('resize',sched);})();</script><script id="av-shell-20261124">/*
   function init() { theme(); wordmark(); scan(); setTimeout(function () { wordmark(); scan(); }, 1800); try { new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
   window.__avBrand = { led: function () { return led.length; }, anim: function () { return animCount; }, hue: HUE, max: MAX_LED };
   if (document.readyState === 'complete') setTimeout(init, 300); else addEventListener('load', function () { setTimeout(init, 300); });
+})();
+</script>
+<script id="av-search-20261125">/* AVIDAA site search entry + deep-link highlight v1. No network, no tracking.
+   1) A search button in the shared header (or beside the home pill) and Ctrl+K or "/" open the home search (all pages, sections, tools, games).
+   2) Landing from a search result (#section-id or #find=Section%20name): scroll to the section and highlight it briefly. */
+(function () {
+  'use strict';
+  if (window.__avSearch) return; window.__avSearch = 1;
+  var HOME = 'https://avidaa1.github.io/', isHome = location.hostname.indexOf('github.io') >= 0 && /^\/?(index\.html)?$/.test(location.pathname);
+  var reduced = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var css = '.av-sbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(5,8,24,.82);color:#fff;font:800 14px/1 system-ui,sans-serif;cursor:pointer;text-decoration:none;box-shadow:0 0 12px rgba(91,192,255,.3)}' +
+    '.av-sbtn:hover,.av-sbtn:focus-visible{outline:3px solid #FFD93D;outline-offset:2px}.av-sbtn svg{width:20px;height:20px}' +
+    '.av-sbtn.av-fixed{position:fixed;z-index:2147482500}' +
+    '.av-header .av-sbtn{margin-left:auto}' +
+    '@keyframes avHit{0%,100%{box-shadow:0 0 0 0 rgba(255,217,61,0)}30%{box-shadow:0 0 0 6px rgba(255,217,61,.75),0 0 30px 8px rgba(255,217,61,.55)}}' +
+    '.av-hit{outline:3px solid #FFD93D!important;outline-offset:4px;border-radius:6px;animation:avHit 1.1s ease-in-out 2}' +
+    '@media (prefers-reduced-motion:reduce){.av-hit{animation:none}}';
+  try { if (window.CSSStyleSheet && CSSStyleSheet.prototype.replaceSync && 'adoptedStyleSheets' in document) { var sh = new CSSStyleSheet(); sh.replaceSync(css); document.adoptedStyleSheets = document.adoptedStyleSheets.concat([sh]); } else throw 0; }
+  catch (e) { var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st); }
+  function goSearch(q) { location.href = HOME + '?search=1' + (q ? '&q=' + encodeURIComponent(q) : ''); }
+  function mkBtn() {
+    var b = document.createElement('a'); b.className = 'av-sbtn'; b.href = HOME + '?search=1'; b.setAttribute('aria-label', 'Search all AVIDAA pages');
+    b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="av-slbl">Search</span>';
+    return b;
+  }
+  var UI = 'a,button,input,select,textarea,[onclick],[role=button]';
+  function busy(l, t, w, h, self) {
+    for (var yy = 0; yy < 3; yy++) for (var xx = 0; xx < 3; xx++) {
+      var els = document.elementsFromPoint(l + w * (xx + .5) / 3, t + h * (yy + .5) / 3);
+      for (var q = 0; q < els.length; q++) { if (els[q] === self || self.contains(els[q])) continue; if (els[q].matches && els[q].matches(UI)) return true; }
+    } return false;
+  }
+  function place() {
+    if (isHome || document.querySelector('.av-sbtn')) return;
+    var b = mkBtn(), hdr = document.querySelector('.av-header');
+    if (hdr) { hdr.appendChild(b); var hb = b.getBoundingClientRect(); if (hb.right > innerWidth + 1 || hb.left < 0) { b.querySelector('.av-slbl').style.display = 'none'; } return; }
+    var pill = document.querySelector('.av-pill'); if (!pill) return;
+    b.classList.add('av-fixed'); document.body.appendChild(b);
+    var pr = pill.getBoundingClientRect(), bw = b.getBoundingClientRect(), W = bw.width, H = bw.height;
+    var spots = [[pr.right + 8, pr.top], [pr.left - W - 8, pr.top], [pr.left, pr.bottom + 8], [pr.left, pr.top - H - 8]];
+    for (var i = 0; i < spots.length; i++) {
+      var l = spots[i][0], t = spots[i][1]; if (l < 4 || t < 4 || l + W > innerWidth - 4 || t + H > innerHeight - 4) continue;
+      b.style.left = l + 'px'; b.style.top = t + 'px'; if (!busy(l, t, W, H, b)) return;
+    }
+    b.querySelector('.av-slbl').style.display = 'none'; b.remove();   /* no free spot: no button, keyboard shortcut still works */
+  }
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase(), tg = ((document.activeElement || {}).tagName || '');
+    if (isHome) return;
+    if ((e.ctrlKey || e.metaKey) && k === 'k') { e.preventDefault(); goSearch(); }
+    else if (k === '/' && !/INPUT|TEXTAREA|SELECT/.test(tg) && !(document.activeElement && document.activeElement.isContentEditable)) { e.preventDefault(); goSearch(); }
+  });
+  /* ---------- landing from a search result ---------- */
+  var INV = /[​-‏‪-‮⁠-⁤﻿­]/g;
+  function norm(t) { return String(t || '').replace(INV, '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim(); }
+  function visible(el) { return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length); }
+  function ntext(e) { return norm(e.innerText || e.textContent); }
+  function findByText(t) {
+    var n = norm(t).slice(0, 90), pri = 'h1,h2,h3,h4,h5,[role=tab],button,.tab,.nav-btn,dt,summary,strong,b,[class*="name"],[class*="title"]', best = null, i, x;
+    var els = document.querySelectorAll(pri);
+    for (i = 0; i < els.length; i++) { x = ntext(els[i]); if (x === n) return els[i]; if (!best && x.indexOf(n) === 0 && x.length < n.length + 30) best = els[i]; }
+    if (best) return best;
+    var all = document.body.querySelectorAll('*'), lim = Math.min(all.length, 8000);
+    for (i = 0; i < lim; i++) { var e = all[i]; if (e.children.length > 3 || e.tagName === 'SCRIPT' || e.tagName === 'STYLE') continue; x = ntext(e); if (x === n) return e; }
+    return null;
+  }
+  function esc(v) { return String(v).replace(/["\\]/g, ''); }
+  function controllers(id) {
+    var keys = Array.isArray(id) ? id.slice() : [id]; id = keys[0] || ''; var k2 = id.replace(/^(page|pg|p|panel|tab|sec|section|view|screen)[-_]/i, ''); if (k2 && k2 !== id) keys.push(k2);
+    var sel = [];
+    keys.forEach(function (k) { k = esc(k);
+      sel.push('[aria-controls="' + k + '"]', '[data-tab="' + k + '"]', '[data-target="' + k + '"]', '[data-panel="' + k + '"]', '[data-page="' + k + '"]', '[data-p="' + k + '"]', '[data-view="' + k + '"]', '[data-section="' + k + '"]', 'a[href="#' + k + '"]',
+        '[onclick*="\'' + k + '\'"]', '[onclick*="\\"' + k + '\\""]', '[data-go="' + k + '"]', '[data-nav="' + k + '"]', '[data-open="' + k + '"]', '#nb-' + k, '#nav-' + k, '#tab-' + k, '#btn-' + k, '#np-' + k, '#t-' + k, '#n-' + k);
+    });
+    try { return [].slice.call(document.querySelectorAll(sel.join(','))); } catch (e) { return []; }
+  }
+  function reveal(el) {
+    for (var tries = 0; tries < 5 && !visible(el); tries++) {
+      var hid = null;
+      for (var p = el; p && p !== document.body; p = p.parentElement) { if (!visible(p)) { hid = p; } else if (hid) break; }
+      var cur = el, target = null; for (var q = el; q && q !== document.body; q = q.parentElement) { if (!visible(q) && (q.id || (q.getAttribute && (q.getAttribute('data-path') || q.getAttribute('data-cat'))))) { target = q; } }
+      if (!target) target = hid; if (!target) break;
+      var ks = []; if (target.id) ks.push(target.id); ['data-path', 'data-cat', 'data-tab', 'data-page', 'data-id', 'data-key'].forEach(function (at) { var v = target.getAttribute && target.getAttribute(at); if (v) ks.push(v); }); if (!ks.length) break;
+      var cs = controllers(ks); if (!cs.length) break;
+      for (var c = 0; c < cs.length; c++) { try { cs[c].click(); } catch (e) {} if (visible(el)) return; }
+    }
+  }
+  function flash(el) {
+    try { el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' }); } catch (e) { el.scrollIntoView(); }
+    el.classList.add('av-hit'); setTimeout(function () { el.classList.remove('av-hit'); }, 3200);
+  }
+  function land() {
+    var h = location.hash; if (!h || h.length < 2) return;
+    var want = null, byId = null;
+    try { if (h.indexOf('#find=') === 0) want = decodeURIComponent(h.slice(6)); else byId = decodeURIComponent(h.slice(1)); } catch (e) { return; }
+    var tries = 0;
+    (function attempt() {
+      var el = byId ? document.getElementById(byId) : (want ? findByText(want) : null);
+      if (el) { if (!visible(el)) reveal(el); if (visible(el)) { flash(el); return; } }
+      if (++tries < 22) setTimeout(attempt, 400);
+    })();
+  }
+  window.__avSearch = { goSearch: goSearch, land: land, findByText: findByText };
+  function init() { place(); setTimeout(place, 1500); land(); }
+  if (document.readyState === 'complete') setTimeout(init, 200); else addEventListener('load', function () { setTimeout(init, 200); });
+  addEventListener('hashchange', land);
 })();
 </script>
 </body>
