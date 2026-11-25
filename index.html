@@ -5,13 +5,10 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a14'/%3E%3Cpath d='M10 50 L30 50 L38 28 L50 72 L62 35 L70 50 L90 50' stroke='%23f59e0b' stroke-width='5' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#050818">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; connect-src 'self' https://earthquake.usgs.gov; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'">
-<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; connect-src 'self' https://earthquake.usgs.gov; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>AVIDAA SEISMIC — Earthquake &amp; Tsunami Archive</title>
 <meta name="description" content="A scientific archive of earthquakes, tectonics, tsunamis, the 2026 Venezuela doublet, induced-seismicity investigations, safety protocols, and rescue-team formation.">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8M1YZQ8WF"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G8M1YZQ8WF');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -921,7 +918,7 @@ function go(name){
  // lazy-load USGS feed on first Live visit
  if(name==='live'&&!window._liveLoaded){window._liveLoaded=true;loadQuakes();}
  window.scrollTo({top:0,behavior:'smooth'});
- try{gtag('event','page_view',{page_title:name});}catch(e){}
+ try{}catch(e){}
 }
 window.go=go;
 
@@ -1054,7 +1051,7 @@ if(document.readyState==='complete')start();else addEventListener('load',start);
 addEventListener('resize',sched);})();</script><script id="av-shell-20261124">/* AVIDAA shell: shared header (or floating pill) + footer with the "Last updated" stamp. No outside calls, no tracking.
    Template tokens are replaced when a page is built: Seismic --av-knowledge Knowledge 2026-11-24 06:37 */
 (function(){
-  var NAME='Seismic',SECTOR='--av-knowledge',STAMP='2026-11-25 14:45',HOME='https://avidaa1.github.io/';
+  var NAME='Seismic',SECTOR='--av-knowledge',STAMP='2026-11-25 15:57',HOME='https://avidaa1.github.io/';
   var ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   function build(){
     if(!document.body||document.querySelector('.av-footer'))return;
